@@ -1,0 +1,53 @@
+$primary-dark-color: #1c1c1c;
+$secondary-dark-color: #424242;
+$primary-light-color: #f8f9fa;
+
+@mixin text-shadow($x, $v, $blur, $color) {
+    -webkit-text-shadow: $x $v $blur $color;
+    text-shadow: $x $v $blur $color;
+}
+
+html {
+    background-color: #fff;
+}
+
+body {
+    background-image: url(../img/pattern.png), url(../img/flowers-light.png);
+}
+
+#logo {
+    h1 {
+        a {
+            color: #404040;
+            @include text-shadow(1px, 1px, 1px, $primary-dark-color);
+        }        
+    }
+    
+    h2 {
+        color: #404040;
+    }    
+}
+
+#main-nav {
+    >ul {
+        >li {
+            a {
+                color: $primary-dark-color;
+                @include text-shadow(1px, 1px, 1px, $primary-dark-color);
+            }
+            &:hover {
+                background-color: #3b3b3b;
+                a {
+                    color: $primary-light-color;
+                    @include text-shadow(1px, 1px, 1px, #000);
+                }
+            }
+        }
+    }
+}
+
+#intro-text {
+    background-color: none;
+    color: $primary-dark-color;
+    @include text-shadow(1px, 1px, 1px, #fff);
+}

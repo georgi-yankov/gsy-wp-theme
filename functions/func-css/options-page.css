@@ -1,0 +1,45 @@
+#theme-options-wrap {
+    background: #fff;
+    background: -moz-linear-gradient(top, #f4f2f2 0%, #fff 20%, #f4f2f2 80%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f2f2), color-stop(20%,#fff), color-stop(80%,#f4f2f2), color-stop(100%,#fff));
+    background: -webkit-linear-gradient(top, #f4f2f2 0%, #fff 20%, #f4f2f2 80%, #fff 100%);
+    background: -o-linear-gradient(top, #f4f2f2 0%, #fff 20%, #f4f2f2 80%, #fff 100%);
+    background: -ms-linear-gradient(top, #f4f2f2 0%, #fff 20%, #f4f2f2 80%, #fff 100%);
+    background: linear-gradient(to bottom, #f4f2f2 0%, #fff 20%, #f4f2f2 80%, #fff 100%);
+    padding: 36px;
+
+    width: 700px;
+}
+
+.widefat th,
+.widefat td {
+    border: none;
+}
+
+#theme-options-wrap table {
+    border-bottom: 1px solid #dfdfdf;
+    margin: 20px 0;
+}
+
+#theme-options-wrap input,
+#theme-options-wrap textarea {
+    padding: 6px;
+}
+
+#theme-options-wrap textarea {
+    width: 400px;
+    height: 100px;
+}
+
+#theme-options-wrap input {
+    width: 400px;
+}
+
+#theme-options-wrap input[type="submit"] {
+    padding: 0;
+    width: 110px;
+}
+
+#theme-options-wrap button {
+    min-width: 80px;
+}

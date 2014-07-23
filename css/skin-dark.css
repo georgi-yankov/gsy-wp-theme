@@ -1,0 +1,41 @@
+html {
+  background-color: #171717;
+  /*@include linear-gradient(#000, 0, transparent, 100%);*/
+}
+
+body {
+  background-color: transparent;
+  background-image: url(../img/pattern.png), url(../img/flowers-dark.png);
+}
+
+.lt-ie9 body {
+  background-image: url(../img/pattern.png);
+}
+
+#site-wrapper {
+  background-image: -webkit-radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
+  background-image: -moz-radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
+  background-image: -ms-radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
+  background-image: -o-radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
+  background-image: radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
+}
+
+.lt-ie9 #site-wrapper {
+  background: url(../img/flowers-dark.png) center top no-repeat;
+}
+
+#logo h1 a {
+  color: #f8f9fa;
+  -webkit-text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px black;
+}
+#logo h2 {
+  color: #a7a8a8;
+}
+
+#intro-text {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #f8f9fa;
+  -webkit-box-shadow: 0 1px 1px black;
+  box-shadow: 0 1px 1px black;
+}
