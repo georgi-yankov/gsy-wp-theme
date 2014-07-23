@@ -3,7 +3,7 @@
     <?php // use the search form by default ?>
     <?php if (!dynamic_sidebar('right-sidebar')) : ?>
 
-        <article class="widget">
+        <article class="widget widget_search">
             <h3 class="widget-header">Search</h3>
             <div class="widget-body">
                 <?php get_search_form(); ?>
