@@ -10,6 +10,9 @@ function create_theme_options_page() {
 }
 
 function build_options_page() {
+    if (!current_user_can('manage_options')) {
+        wp_die(__('You do not have sufficient permissions to access this page.'));
+    }
     ?>
     <div id="theme-options-wrap" class="widefat">
         <h2>My Theme Options</h2>
@@ -107,7 +110,6 @@ if (isset($_GET['page'])) {
 } else {
     $page_name = '';
 }
-
 
 // Add css and js only if we are in the theme options page
 if ($script_filename == 'options-general.php' && $page_name == 'theme-options') {
