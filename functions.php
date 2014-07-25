@@ -54,8 +54,8 @@ function gsy_adding_styles() {
 
 function gsy_adding_scripts() {
     wp_enqueue_script('jquery'); // comes from the WordPress core
-    wp_enqueue_script('feature_carousel', get_template_directory_uri() . '/js/jquery.featureCarousel.js', array('jquery'), $ver, $in_footer = true);
-    wp_enqueue_script('my_script', get_template_directory_uri() . '/js/script.js', array('jquery', 'feature_carousel'), $ver, $in_footer = true);
+    wp_enqueue_script('feature_carousel', get_template_directory_uri() . '/js/jquery.featureCarousel.js', array('jquery'), $ver = false, $in_footer = true);
+    wp_enqueue_script('my_script', get_template_directory_uri() . '/js/script.js', array('jquery', 'feature_carousel'), $ver = false, $in_footer = true);
 }
 
 /* ==================================================================================================
