@@ -14,15 +14,13 @@ function build_options_page() {
         wp_die(__('You do not have sufficient permissions to access this page.'));
     }
     ?>
-    <div id="theme-options-wrap" class="widefat">
+    <div id="theme-options-wrap" class="wrap">
         <h2>My Theme Options</h2>
         <p>Take control of your theme, by overriding the default settings with your own specific preferences.</p>
         <form method="post" action="options.php" enctype="multipart/form-data">
             <?php settings_fields('plugin_options'); ?>
             <?php do_settings_sections('theme-options'); ?>
-            <p class="submit">
-                <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes'); ?>" />
-            </p>
+            <?php submit_button(); ?>
         </form>
     </div><!-- #theme-options-wrap -->
 
@@ -47,33 +45,6 @@ function register_and_build_fields() {
 }
 
 function validate_setting($plugin_options) {
-    $keys = array_keys($_FILES);
-    $i = 0;
-    foreach ($_FILES as $image) {
-        // If a file was uploaded?
-        if ($image['size']) {
-            // If it is an image?
-            if (preg_match('/(jpg|jpeg|png|gif)$/', $image['type'])) {
-                $override = array('test_form' => false);
-                // Save the file, and store in array, containing its location in $file
-                $file = wp_handle_upload($image, $override);
-                $plugin_options[$keys[$i]] = $file['url'];
-            } else {
-                // Not an image.
-                $options = get_option('plugin_options');
-                $plugin_options[$keys[$i]] = $options[$logo];
-                // Die and let the user know that they made a mistake.
-                wp_die('No image was uploaded.');
-            }
-        }
-        // Else, the user didn't upload a file.
-        // Retain the image that's already on file.
-        else {
-            $options = get_option('plugin_options');
-            $plugin_options[$keys[$i]] = $options[$keys[$i]];
-        }
-        $i++;
-    }
     return $plugin_options;
 }
 
