@@ -606,6 +606,10 @@ a {
         color: #fff;
         line-height: 20px;
         padding: 14px 18px 18px 18px;
+        
+        > ul:after {
+            @include clearfix;
+        }
     }
 }
 
@@ -727,17 +731,13 @@ a {
 #footer {
     background-color: $primary-dark-color;
     color: $secondary-dark-color;
-    padding: 20px;
+    padding: 15px 20px;
     max-width: 900px;
     margin: 0 auto;
 }
 
 #copyright {
     /*min-height: 0;*/ 
-}
-
-#social-icons {
-    /*min-height: 0;*/     
 }
 
 /*==============================================================================
