@@ -4,8 +4,8 @@
 <!-- ******     CAROUSEL      ****************************************************** -->
 <!-- ******************************************************************************* -->
 
-<?php get_template_part( 'inc/carousel' ); ?>
-<?php get_template_part( 'inc/intro-text' ); ?>
+<?php get_template_part('inc/carousel'); ?>
+<?php get_template_part('inc/intro-text'); ?>
 
 <div id="middle" class="container-fluid">
     <div class="row-fluid">
@@ -14,45 +14,107 @@
         <!-- ******     MAIN CONTENT      ************************************************** -->
         <!-- ******************************************************************************* -->
         <section id="main-content" class="span8">
-            <article class="post-entry">
-                <div class="post-entry-inner">
 
-                    <div class="post-time">
-                        <span></span>
-                        <span>
-                            <span>28</span>
-                            <span>Apr.</span> 
-                        </span>
-                    </div>
-                    <div class="post-img">
-                        <a href="#"><img class="carousel-image" alt="Image Caption" src="<?php echo get_template_directory_uri(); ?>/img/test-pics/penguins.jpg" width="100%"></a>
-                    </div>
+            <?php
+            $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+            query_posts(array(
+                'post_type' => 'post',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'paged' => $paged,
+                'cat' => -0,
+            ));
+            ?>
 
-                    <h2 class="post-title">
-                        <a href="#">Сега само пробвамPost TitlePost TitlePost TitlePost TitlePost TitlePost TitlePost TitlePost TitlePost TitlePost TitlePost Title</a>
-                    </h2>    
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                    <div class="post-body">
-                        <p>Сега само пробвам habitasse platea dictumst. Quisque commodot. Quisque commodo sodales lacus id condimentum. Nunc enim enim, porta ut consequat et, interdum ac orci.Nulla cursus tortor a sem dapibus pretium. Pellentesque posuere mattis libero dictum imperdiet. Vestibulum erat purus, vehicula et vestibulum nec, posuere at tellus.</p>
-                        <p>In hac habitasse platea dictumst. Quisque commodot. Quisque commodo sodales lacus id condimentum. Nunc enim enim, porta ut consequat et, interdum ac orci.Nulla cursus tortor a sem dapibus pretium. Pellentesque posuere mattis libero dictum imperdiet. Vestibulum erat purus, vehicula et vestibulum nec, posuere at tellus.</p>
-                        <p>In hac habitasse platea dictumst. Quisque commodot. Quisque commodo sodales lacus id condimentum. Nunc enim enim, porta ut consequat et, interdum ac orci.Nulla cursus tortor a sem dapibus pretium. Pellentesque posuere mattis libero dictum imperdiet. Vestibulum erat purus, vehicula et vestibulum nec, posuere at tellus.</p>
-                    </div>
+                    <article class="post-entry">
+                        <div class="post-entry-inner">
 
-                </div><!-- .post-entry-inner -->
+                            <div class="post-time">
+                                <span></span>
+                                <span>
+                                    <span><?php the_time('d'); ?></span>
+                                    <span><?php the_time('M'); ?>.</span> 
+                                </span>
+                            </div>
 
-                <div class="post-footer">
-                    <span class="footer-icon icon-date">
-                        <a href="#"><time datetime="2011-01-06">January 6, 2011 at 4:26 am</time></a>
-                    </span>
-                    <span class="footer-icon icon-comment"><a href="#">23 comments</a></span>
-                    <span class="footer-icon icon-author"><a href="#">admin</a></span>
-                    <span class="footer-icon icon-category"><a href="#">lyfestyle, fashion</a></span>
-                    <span class="footer-icon icon-category"><a href="#">lyfestyle, fashion</a></span>
-                    <span class="footer-icon icon-category"><a href="#">lyfestyle, fashion</a></span>
-                    <span class="footer-icon icon-category"><a href="#">lyfestyle, fashion</a></span>
-                    <span class="footer-icon icon-category"><a href="#">lyfestyle, fashion</a></span>
-                </div><!-- post-footer -->
-            </article><!-- .post-entry -->
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="post-img">
+                                    <?php
+                                    $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-img');
+                                    $img_alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
+                                    ?>                                    
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                        <img alt="<?php echo $img_alt; ?>" src="<?php echo $img[0]; ?>" width="100%" height="100%">
+                                    </a>
+                                </div><!-- .post-img -->
+                            <?php endif; ?>
+
+                            <h2 class="post-title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h2>    
+
+                            <div class="post-body">
+                                <?php echo gsy_excerpt_dots(); ?>
+                            </div>
+
+                        </div><!-- .post-entry-inner -->
+
+                        <div class="post-footer">
+                            <span class="footer-icon icon-date"> 
+                                <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('d F, Y'); ?> at <?php the_time('H:m'); ?></time>
+                            </span>
+
+                            <?php
+                            $comments_count = wp_count_comments($post->ID);
+                            $total_comments = $comments_count->total_comments;
+                            ?>
+                            <span class="footer-icon icon-comment">
+                                <a href="<?php comments_link(); ?>">
+                                    <?php echo $total_comments; ?> <?php echo $total_comments == 1 ? 'comment' : 'comments'; ?>
+                                </a>
+                            </span>
+
+                            <span class="footer-icon icon-author"><?php the_author_posts_link(); ?></span> 
+
+                            <?php
+                            $categories = get_the_category();
+                            $seperator = ', ';
+                            $output = '';
+                            if ($categories) {
+                                echo '<span class="footer-icon icon-category">';
+                                foreach ($categories as $category) {
+                                    $output .= '<a href="' . get_category_link($category->term_id) . '" title="' . esc_attr(sprintf(__("View all posts in %s"), $category->name)) . '">';
+                                    $output .= $category->cat_name;
+                                    $output .= '</a>';
+                                    $output .= $seperator;
+                                }
+                                echo trim($output, $seperator);
+                                echo '</span>';
+                            }
+                            ?>
+                        </div><!-- post-footer -->
+                    </article><!-- .post-entry -->
+
+                <?php endwhile; ?>
+
+                <!-- PAGINATION -->
+                <?php
+                if (function_exists("pagination")) {
+                    pagination();
+                }
+                ?>
+
+            <?php else: ?>
+
+                <div>
+                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                </div>
+
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
+
         </section><!-- #main-content -->
 
         <!-- ******************************************************************************* -->

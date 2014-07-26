@@ -118,6 +118,10 @@ a {
   text-decoration: none;
 }
 
+input {
+  outline: none;
+}
+
 /* ICONS */
 .footer-icon, .widget.widget_recent_entries ul li span.post-date {
   background-image: url("img/icons.png");
@@ -458,8 +462,12 @@ a {
   padding-top: 5px;
   text-align: center;
 }
+#main-content .post-entry .post-time > span:last-child span {
+  display: block;
+}
 #main-content .post-entry .post-time > span:last-child span:first-child {
   font-size: 15px;
+  padding-bottom: 3px;
 }
 #main-content .post-entry .post-time > span:last-child span:last-child {
   font-size: 10px;
@@ -469,6 +477,9 @@ a {
   padding: 5px;
   -webkit-box-shadow: 0px 0px 2px #1c1c1c;
   box-shadow: 0px 0px 2px #1c1c1c;
+}
+#main-content .post-entry .post-img > a {
+  display: block;
 }
 #main-content .post-entry .post-title {
   line-height: 28px;
@@ -491,6 +502,7 @@ a {
 }
 #main-content .post-entry .post-footer {
   background-color: #1c1c1c;
+  color: #424242;
   font-size: 10px;
   padding: 8px 8px 0;
 }
@@ -521,6 +533,40 @@ a {
 }
 .lt-ie9 #main-content .post-entry .post-time > span:first-child {
   border-top: none;
+}
+
+/*==============================================================================
+    PAGINATION
+==============================================================================*/
+#pagination {
+  color: #999;
+  padding: 10px 0;
+  text-align: center;
+}
+
+#pagination a,
+#pagination span {
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#pagination a {
+  color: #c03;
+  text-decoration: none;
+}
+
+#pagination a:hover {
+  text-decoration: underline;
+}
+
+#pagination span.pagination-numbers {
+  margin-right: 0;
+}
+
+#pagination .pagination-numbers span,
+#pagination .pagination-numbers a {
+  font-size: 11px;
 }
 
 /*==============================================================================
@@ -608,18 +654,34 @@ a {
 /*********************************************
     WIDGET SEARCH
 *********************************************/
-.widget.widget_search label {
-  display: none;
+.widget.widget_search .searchform {
+  background-color: #262626;
+  border: solid #2f2f2f 1px;
+  border-top-color: #000;
+  border-left-color: #000;
+  vertical-align: top;
 }
-.widget.widget_search input {
-  background-color: #f0f1f2;
-  border: 1px solid #1c1c1c;
+.widget.widget_search .searchform input {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  line-height: 19px;
+  padding-left: 3px;
+  vertical-align: top;
+  width: 232px;
+  height: 19px;
 }
-.widget.widget_search input[type=text] {
-  padding: 3px 3px;
+.widget.widget_search .searchform a {
+  background: url(img/go_search.png) no-repeat center 4px;
+  display: block;
+  float: right;
+  vertical-align: top;
+  width: 19px;
+  height: 19px;
 }
-.widget.widget_search input[type=submit] {
-  padding: 3px 6px;
+.widget.widget_search .searchform a:hover {
+  background-position: center -16px;
 }
 
 /*********************************************
@@ -658,6 +720,10 @@ a {
   padding: 15px 20px;
   max-width: 900px;
   margin: 0 auto;
+  -webkit-box-shadow: 0 1px 1px black;
+  box-shadow: 0 1px 1px black;
+  -webkit-text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px black;
 }
 
 #copyright {
@@ -682,6 +748,10 @@ a {
   .widget.widget_categories ul li {
     background: none;
     width: 100%;
+  }
+
+  .widget.widget_search .searchform input {
+    width: 162px;
   }
 }
 /*********************************************
@@ -713,6 +783,10 @@ a {
   .widget.widget_recent_entries ul li {
     background: url("img/widget-442-line.png") center bottom no-repeat;
   }
+
+  .widget.widget_search .searchform input {
+    width: 412px;
+  }
 }
 /*********************************************
     from 321px to 480px
@@ -724,6 +798,10 @@ a {
 
   .widget.widget_recent_entries ul li {
     background: url("img/widget-282-line.png") center bottom no-repeat;
+  }
+
+  .widget.widget_search .searchform input {
+    width: 252px;
   }
 }
 /*********************************************
@@ -762,5 +840,9 @@ a {
 
   .widget.widget_recent_entries ul li {
     background: url("img/widget-202-line.png") center bottom no-repeat;
+  }
+
+  .widget.widget_search .searchform input {
+    width: 172px;
   }
 }

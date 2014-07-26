@@ -66,3 +66,7 @@ function gsy_adding_scripts() {
 require_once(TEMPLATEPATH . '/functions/admin-menu.php');
 // Breadcrumbs
 require_once(TEMPLATEPATH . '/functions/breadcrumbs.php');
+// Custom excerpt
+require_once(TEMPLATEPATH . '/functions/gsy-excerpt-dots.php');
+// Pagination
+require_once(TEMPLATEPATH . '/functions/pagination.php');

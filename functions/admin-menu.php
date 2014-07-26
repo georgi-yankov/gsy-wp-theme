@@ -17,7 +17,7 @@ function build_options_page() {
     <div id="theme-options-wrap" class="wrap">
         <h2>My Theme Options</h2>
         <p>Take control of your theme, by overriding the default settings with your own specific preferences.</p>
-        <form method="post" action="options.php" enctype="multipart/form-data">
+        <form method="post" action="options.php" enctype="multipart/form-data" role="form">
             <?php settings_fields('plugin_options'); ?>
             <?php do_settings_sections('theme-options'); ?>
             <?php submit_button(); ?>
