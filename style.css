@@ -109,9 +109,6 @@ body {
 }
 
 /*********************************************
-    CLEAR FLOATS
-*********************************************/
-/*********************************************
     COMMON PARTS
 *********************************************/
 a {
@@ -539,36 +536,97 @@ input {
     PAGINATION
 ==============================================================================*/
 #pagination {
-  color: #999;
-  padding: 10px 0;
+  font-size: 13px;
+}
+#pagination p:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+}
+#pagination .pagination-numbers {
+  display: inline-block;
+  float: left;
+}
+#pagination .pagination-numbers a,
+#pagination .pagination-numbers .pagination-current {
+  display: inline-block;
+  line-height: 34px;
+  float: left;
+  margin: 0 6px 6px 0;
   text-align: center;
+  -webkit-text-shadow: 1px 1px 0 black;
+  text-shadow: 1px 1px 0 black;
+  width: 34px;
 }
-
-#pagination a,
-#pagination span {
-  font-size: 10px;
-  font-weight: bold;
-  margin-right: 10px;
+#pagination .pagination-numbers .pagination-current {
+  background: brown;
 }
-
-#pagination a {
-  color: #c03;
-  text-decoration: none;
-}
-
-#pagination a:hover {
-  text-decoration: underline;
-}
-
-#pagination span.pagination-numbers {
-  margin-right: 0;
-}
-
-#pagination .pagination-numbers span,
 #pagination .pagination-numbers a {
-  font-size: 11px;
+  color: #fff;
+  background: red;
+}
+#pagination .pagination-numbers:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+}
+#pagination .pagination-next,
+#pagination .pagination-previous {
+  color: #fff;
+  display: inline-block;
+  float: left;
+  line-height: 34px;
+  margin: 0 6px 6px 0;
+  -webkit-text-shadow: 1px 1px 0 black;
+  text-shadow: 1px 1px 0 black;
+}
+#pagination .pagination-next {
+  background: url(img/pagination.png) no-repeat right 0px;
+  padding: 0 15px 0 5px;
+}
+#pagination .pagination-next:hover {
+  background-position: right -34px;
+  color: #1c1c1c;
+  -webkit-text-shadow: 1px 1px 0 white;
+  text-shadow: 1px 1px 0 white;
+}
+#pagination .pagination-previous {
+  background: url(img/pagination.png) no-repeat left -68px;
+  padding: 0 5px 0 15px;
+}
+#pagination .pagination-previous:hover {
+  background-position: left -102px;
+  color: #1c1c1c;
+  -webkit-text-shadow: 1px 1px 0 white;
+  text-shadow: 1px 1px 0 white;
 }
 
+/*#pagination a,
+    #pagination span {
+    font-size: 10px;
+    font-weight: bold;
+    margin-right: 10px;
+    }
+    
+    #pagination a {
+    color: #c03;
+    text-decoration: none;
+    }
+    
+    #pagination a:hover {
+    text-decoration: underline;
+    }
+    
+    #pagination span.pagination-numbers {
+    margin-right: 0;
+    }
+    
+    #pagination .pagination-numbers span,
+    #pagination .pagination-numbers a {
+    font-size: 11px;
+}*/
 /*==============================================================================
     SIDEBAR
 ==============================================================================*/
