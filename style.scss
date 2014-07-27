@@ -66,7 +66,6 @@ table {
 
 $primary-dark-color: #1c1c1c;
 $secondary-dark-color: #424242;
-/*$primary-light-color: #f8f9fa;*/
 $primary-light-color: #f0f1f2;
 
 /*********************************************
@@ -75,21 +74,21 @@ $primary-light-color: #f0f1f2;
 
 @font-face {
     font-family: CartoGothicStd-Book;
-    src: url(fonts/CartoGothic-Std/CartoGothicStd-Book.otf);
-    src: url(fonts/CartoGothic-Std/CartoGothicStd-Book.eot);    
+    src: url(css/fonts/CartoGothic-Std/CartoGothicStd-Book.eot);
+    src: url(css/fonts/CartoGothic-Std/CartoGothicStd-Book.eot?#iefix) format('embedded-opentype'),
+         url(css/fonts/CartoGothic-Std/CartoGothicStd-Book.woff) format('woff'),
+         url(css/fonts/CartoGothic-Std/CartoGothicStd-Book.ttf) format('truetype');
 }
 
 @font-face {
     font-family: CartoGothicStd-Italic;
-    src: url(fonts/CartoGothic-Std/CartoGothicStd-Italic.otf);
-    src: url(fonts/CartoGothic-Std/CartoGothicStd-Italic.eot);
+    src: url(css/fonts/CartoGothic-Std/CartoGothicStd-Italic.eot);
+    src: url(css/fonts/CartoGothic-Std/CartoGothicStd-Italic.eot?#iefix) format('embedded-opentype'),
+         url(css/fonts/CartoGothic-Std/CartoGothicStd-Italic.woff) format('woff'),
+         url(css/fonts/CartoGothic-Std/CartoGothicStd-Italic.ttf) format('truetype');
 }
 
 $basic-font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-
-/*********************************************
-    URLs
-*********************************************/
 
 /*********************************************
     MIXINS
@@ -172,7 +171,8 @@ a {
     text-decoration: none;
 }
 
-input {
+input,
+textarea {
     outline: none;
 }
 
@@ -250,14 +250,14 @@ input {
     h1 {
         padding-bottom: 5px;
         a {
-            font-family: CartoGothicStd-Book;
+            font-family: CartoGothicStd-Book, $basic-font-family;
             font-size: 55px;
             @include overflow-safe;
         }        
     }
     
     h2 {
-        font-family: CartoGothicStd-Book;
+        font-family: CartoGothicStd-Book, $basic-font-family;
         font-size: 16px;
         padding-left: 4px;
         @include overflow-safe;
@@ -271,7 +271,7 @@ input {
         a {
             color: $primary-light-color;
             display: block;
-            font-family: CartoGothicStd-Book;
+            font-family: CartoGothicStd-Book, $basic-font-family;
         }
         
     }
@@ -456,7 +456,7 @@ input {
 ==============================================================================*/
 
 #intro-text {
-    font-family: CartoGothicStd-Italic;
+    font-family: CartoGothicStd-Italic, $basic-font-family;
     font-size: 14px;
     line-height: 22px;
     text-align: center;
@@ -535,24 +535,157 @@ input {
             > a {
                 display: block;
             }
+            
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
         .post-title {
             line-height: 28px;
             padding-bottom: 18px;
             a {
                 color: $primary-dark-color;
-                font-family: CartoGothicStd-Book;
+                font-family: CartoGothicStd-Book, $basic-font-family;
                 font-size: 26px;
                 &:hover {
                     text-decoration: underline;
                 }
             }
-        }
+        }        
         .post-body {
             color: #535353;
-            line-height: 20px;
+            font-size: 13px;
+            line-height: 22px;
+            overflow: hidden;
+            
             p {
+                padding-bottom: 15px;
+            }   
+            
+            h1, h2, h3, h4, h5, h6 {
+                font-family: CartoGothicStd-Book, $basic-font-family;
+                font-weight: bold;
                 padding-bottom: 10px;
+                word-wrap: break-word;
+            }
+            
+            h1 {
+                font-size: 22px;
+                line-height: 30px;
+            }
+            
+            h2 {
+                font-size: 20px;
+                line-height: 28px;
+            }
+            
+            h3 {
+                font-size: 18px;
+                line-height: 26px;
+            }
+            
+            h4 {
+                font-size: 16px;
+                line-height: 24px;
+            }
+            
+            h5 {
+                font-size: 14px;
+                line-height: 22px;
+            }
+            
+            h6 {
+                font-size: 13px;
+                line-height: 20px;
+            }
+            
+            .aligncenter {
+                display: block;
+                margin: 10px auto;
+            }
+            
+            .alignleft  {
+                display: inline;
+                float: left;
+                margin: 10px 15px 10px 0;
+            }
+            
+            .alignright {
+                float: right;
+                margin: 10px 0 10px 15px;
+            }
+            
+            .alignnone {
+                margin: 10px;
+            }
+            
+            img {
+                padding: 5px;
+                @include box-shadow(0px 0px 2px $primary-dark-color);
+            }
+            
+            a {
+                color: #818181;
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            
+            ul li {
+                list-style-type: disc;
+                margin-left: 30px;
+            }
+            
+            ol li {
+                list-style-type: decimal;
+                margin-left: 30px;
+            }
+            
+            ul li li {
+                list-style-type: circle;
+            }
+            
+            ol li li {
+                list-style-type: lower-alpha;
+            }
+            
+            ul li li li,
+            ol li li li {
+                list-style-type: square;
+            }
+            
+            blockquote {
+                background: #d6dbdf url(img/blockquote.png) no-repeat 0 bottom;
+                font-style: italic;
+                margin: 5px 0 5px 0;
+                padding: 15px 20px 20px 20px;
+                @include text-shadow(1px, 1px, 0, #fff);
+            }
+            
+            strong {
+                font-weight: bold;
+            }
+            
+            table {
+                border-collapse: collapse;
+                margin: 0 0 20px 0;
+                text-align: left;
+                
+                thead th {
+                    border-bottom: 2px solid $secondary-dark-color;
+                    font-weight: normal;
+                    padding: 10px 8px;
+                }
+                
+                td {
+                    padding: 9px 8px 0px 8px;
+                }
+                
+                tbody tr:hover td {
+                    color: #000;
+                }
             }
         }
         .post-footer {
@@ -578,6 +711,317 @@ input {
                 }
             }
         }
+        
+        .comments-area {
+            background: $primary-dark-color;
+            color: #fff;
+            font-family: $basic-font-family;
+            padding: 25px 23px;
+            @include text-shadow(1px, 1px, 1px, #000);
+            
+            a {
+                color: #636363;
+                
+                &:hover {
+                    text-decoration: underline;
+                }
+            }            
+        }
+        
+        .comment-reply-title,
+        .comments-title {
+            font-family: CartoGothicStd-Book, $basic-font-family;
+            font-size: 24px;
+            margin: 0 0 10px 0; 
+        }
+        
+        .comment-list {
+            list-style: none;
+            margin: 0 0 25px 0;
+            
+            .comment {                
+                .comment-body {
+                    border-bottom: 1px solid $secondary-dark-color;
+                    margin-bottom: 10px;
+                    line-height: 22px;
+                    .comment-meta {
+                        a {
+                            font-size: 10px;
+                            
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }  
+        }
+        
+        .comment-author {
+            font-size: 14px;
+            line-height: 1.7142857142;
+        }
+        
+        .comment-list .reply,
+        .comment-metadata {
+            font-size: 12px;
+            line-height: 2;
+            text-transform: lowercase;
+        }
+        
+        .comment-list .reply {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .comment-author .fn {
+            font-weight: 900;
+        }
+        
+        .comment-author a {
+            color: $primary-light-color;
+        }
+        
+        .comment-list .trackback a,
+        .comment-list .pingback a,
+        .comment-metadata a {
+            color: #767676;
+        }
+        
+        .comment-author a:hover,
+        .comment-list .pingback a:hover,
+        .comment-list .trackback a:hover,
+        .comment-metadata a:hover {
+            /*color: #41a62a;*/
+            text-decoration: underline;
+        }
+        
+        .comment-list article,
+        .comment-list .pingback,
+        .comment-list .trackback {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+            padding-top: 24px;
+        }
+        
+        .comment-list > li:first-child > article,
+        .comment-list > .pingback:first-child,
+        .comment-list > .trackback:first-child {
+            border-top: 0;
+        }
+        
+        .comment-author {
+            position: relative;
+        }
+        
+        .comment-author .avatar {
+            background: $secondary-dark-color;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            height: 18px;
+            padding: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+        }
+        
+        .bypostauthor > article .fn:before {
+            /*content: "\f408";*/
+            margin: 0 2px 0 -2px;
+            position: relative;
+            top: -1px;
+        }
+        
+        .says {
+            display: none;
+        }
+        
+        .comment-author,
+        .comment-awaiting-moderation,
+        .comment-content,
+        .comment-metadata {
+            padding-left: 30px;
+        }
+        
+        .comment-list .reply {
+            padding-left: 10px;
+        }
+        
+        .comment-edit-link {
+            margin-left: 10px;
+        }
+        
+        .comment-edit-link:before {
+            /*content: "\f411";*/
+        }
+        
+        .comment-reply-link:before,
+        .comment-reply-login:before {
+            /*content: "\f412";*/
+            margin-right: 2px;
+        }
+        
+        .comment-content {
+            -webkit-hyphens: auto;
+            -moz-hyphens:    auto;
+            -ms-hyphens:     auto;
+            hyphens:         auto;
+            word-wrap: break-word;
+        }
+        
+        .comment-content ul,
+        .comment-content ol {
+            margin: 0 0 24px 22px;
+        }
+        
+        .comment-content li > ul,
+        .comment-content li > ol {
+            margin-bottom: 0;
+        }
+        
+        .comment-content > :last-child {
+            margin-bottom: 0;
+        }
+        
+        .comment-list .children {
+            list-style: none;
+            margin-left: 15px;
+        }
+        
+        .comment-respond {
+            margin-bottom: 24px;
+            padding: 0;
+        }
+        
+        .comment .comment-respond {
+            margin-top: 24px;
+        }
+        
+        .comment-respond h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .comment-notes,
+        .comment-awaiting-moderation,
+        .logged-in-as,
+        .no-comments,
+        .form-allowed-tags,
+        .form-allowed-tags code {
+            color: #767676;
+        }
+        
+        .comment-notes,
+        .comment-awaiting-moderation,
+        .logged-in-as {
+            font-size: 10px;
+            line-height: 1.7142857142;
+        }
+        
+        .no-comments {
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 1.5;
+            margin-top: 24px;
+            text-transform: uppercase;
+        }
+        
+        .comment-form {
+            color: #767676;
+            
+            p {
+                margin-bottom: 10px;
+            }
+            
+            input[type="text"],
+            textarea {
+                background-color: #262626;
+                border: solid #2f2f2f 1px;
+                border-top-color: #000;
+                border-left-color: #000;
+                color: #fff;
+                font-size: 12px;
+                line-height: 19px;
+                padding: 3px;
+                vertical-align: top;
+            }
+            
+            textarea {
+                width: 100%;
+            }
+            
+            input[type="submit"] {
+                background: url("img/add-comment.png") no-repeat 0 0;
+                border: none;
+                font-size: 0px;
+                width: 113px;
+                height: 22px;
+                
+                &:hover {
+                    background-position: 0 -22px;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+        .comment-form label {
+            display: block;
+            padding-bottom: 8px;
+        }
+        
+        .comment-form input[type="text"],
+        .comment-form input[type="email"],
+        .comment-form input[type="url"] {
+            width: 100%;
+        }
+        
+        .form-allowed-tags,
+        .form-allowed-tags code {
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        .required {
+            /*color: #c0392b;*/
+        }
+        
+        .comment-reply-title small a {
+            color: #2b2b2b;
+            float: right;
+            height: 24px;
+            overflow: hidden;
+            width: 24px;
+        }
+        
+        .comment-reply-title small a:hover {
+            color: #41a62a;
+        }
+        
+        .comment-reply-title small a:before {
+            content: "\f405";
+            font-size: 32px;
+        }
+        
+        .comment-navigation {
+            font-size: 12px;
+            line-height: 2;
+            margin-bottom: 48px;
+            text-transform: uppercase;
+        }
+        
+        .comment-navigation .nav-next,
+        .comment-navigation .nav-previous {
+            display: inline-block;
+        }
+        
+        .comment-navigation .nav-previous a {
+            margin-right: 10px;
+        }
+        
+        #comment-nav-above {
+            margin-top: 36px;
+            margin-bottom: 0;
+        }      
     }
     
 }
@@ -603,6 +1047,7 @@ input {
 
 #pagination {
     font-size: 13px;
+    margin-bottom: 18px;
     
     p:after {
         @include clearfix;
@@ -625,12 +1070,20 @@ input {
         }
         
         .pagination-current {
-            background: brown;
+            background: url(img/pagination.png) no-repeat 0px -34px;
+            color: $primary-dark-color;
+            @include text-shadow(1px, 1px, 0, #fff);
         }
         
         a {
+            background: url(img/pagination.png) no-repeat 0px 0px;
             color: #fff;
-            background: red;
+            
+            &:hover {
+                background: url(img/pagination.png) no-repeat 0px -34px;
+                color: $primary-dark-color;
+                @include text-shadow(1px, 1px, 0, #fff);
+            }
         }
         
         &:after {
@@ -647,28 +1100,27 @@ input {
         margin: 0 6px 6px 0;
         @include text-shadow(1px, 1px, 0, #000);
         
-        
-    }
-    
-    .pagination-next {
-        background: url(img/pagination.png) no-repeat right 0px;
-        padding: 0 15px 0 5px;
-        
         &:hover {
-            background-position: right -34px;
             color: $primary-dark-color;
             @include text-shadow(1px, 1px, 0, #fff);
         }
     }
     
+    .pagination-next {
+        background: url(img/pagination.png) no-repeat right 0px;
+        padding: 0 20px 0 10px;
+        
+        &:hover {
+            background-position: right -34px;
+        }
+    }
+    
     .pagination-previous {
         background: url(img/pagination.png) no-repeat left -68px;
-        padding: 0 5px 0 15px;
+        padding: 0 10px 0 20px;
         
         &:hover {
             background-position: left -102px;
-            color: $primary-dark-color;
-            @include text-shadow(1px, 1px, 0, #fff);
         }
     }
 }
@@ -710,7 +1162,7 @@ input {
     h3.widget-header {
         background: url("img/widget-header-line.png") center bottom no-repeat;
         color: $primary-light-color;
-        font-family: CartoGothicStd-Book;
+        font-family: CartoGothicStd-Book, $basic-font-family;
         font-size: 20px;
         padding: 10px 18px;        
         @include overflow-safe;
@@ -862,7 +1314,7 @@ input {
 #footer {
     background-color: $primary-dark-color;
     color: $secondary-dark-color;
-    padding: 15px 20px;
+    padding: 10px 20px;
     max-width: 900px;
     margin: 0 auto;
     @include box-shadow(0 1px 1px #000);
@@ -870,7 +1322,29 @@ input {
 }
 
 #copyright {
-    /*min-height: 0;*/ 
+    line-height: 18px; 
+}
+
+/*==============================================================================
+    SINGLE
+==============================================================================*/
+
+.single {
+    #main-content {
+        .post-entry {
+            .post-title {
+                color: $primary-dark-color;
+                font-family: CartoGothicStd-Book, $basic-font-family;
+                font-size: 26px;
+                padding-bottom: 10px;
+            }
+            
+            .post-footer {
+                background-color: transparent;
+                padding-bottom: 10px;
+            }
+        }
+    }
 }
 
 /*==============================================================================
@@ -1021,6 +1495,13 @@ input {
     }
     #intro-text {
         display: none;
+    }
+    
+    #pagination {
+        .pagination-next,
+        .pagination-previous {
+            display: none;
+        }
     }
     
     .widget.widget_categories {        

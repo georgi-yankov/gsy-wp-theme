@@ -1,12 +1,7 @@
 <?php
 
-/* =============================================================================
-  PAGINATION
-  =========================================================================== */
-
-function pagination($pages = '', $range = 4) {
-    //$showitems = ($range * 2) + 1;
-    $showitems = 1;
+function pagination($pages = '', $range = 1) {
+    $showitems = ($range * 2) + 1;
 
     global $paged;
     if (empty($paged)) {
