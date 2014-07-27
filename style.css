@@ -292,7 +292,7 @@ textarea {
   border-bottom: none;
 }
 #main-nav li.parent span.dropdown-arrow {
-  background-image: url("img/dropdown-arrow.png");
+  /*background-image: url("img/dropdown-arrow.png");*/
   display: none;
   position: absolute;
   left: 8px;
@@ -476,6 +476,7 @@ textarea {
   display: block;
 }
 #main-content .post-entry .post-img img {
+  vertical-align: top;
   width: 100%;
   height: 100%;
 }
@@ -539,15 +540,23 @@ textarea {
   float: left;
   margin: 10px 15px 10px 0;
 }
+#main-content .post-entry .post-body img.alignleft {
+  margin-left: 1px;
+}
 #main-content .post-entry .post-body .alignright {
   float: right;
   margin: 10px 0 10px 15px;
+}
+#main-content .post-entry .post-body img.alignright {
+  float: right;
+  margin-right: 1px;
 }
 #main-content .post-entry .post-body .alignnone {
   margin: 10px;
 }
 #main-content .post-entry .post-body img {
   padding: 5px;
+  vertical-align: top;
   -webkit-box-shadow: 0px 0px 2px #1c1c1c;
   box-shadow: 0px 0px 2px #1c1c1c;
 }
@@ -602,6 +611,28 @@ textarea {
 }
 #main-content .post-entry .post-body table tbody tr:hover td {
   color: #000;
+}
+#main-content .post-entry .post-body ul.portfolio-buttons-holder {
+  text-align: right;
+}
+#main-content .post-entry .post-body ul.portfolio-buttons-holder li {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0 20px 10px 0;
+  min-width: 110px;
+}
+#main-content .post-entry .post-body ul.portfolio-buttons-holder li a {
+  background-color: #424242;
+  color: #f0f1f2;
+  display: block;
+  padding: 2px 0;
+  text-align: center;
+  text-decoration: none;
+  -webkit-text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px black;
+}
+#main-content .post-entry .post-body ul.portfolio-buttons-holder li a:hover {
+  background-color: #1c1c1c;
 }
 #main-content .post-entry .post-footer {
   background-color: #1c1c1c;
@@ -974,30 +1005,6 @@ textarea {
   background-position: left -102px;
 }
 
-/*#pagination a,
-    #pagination span {
-    font-size: 10px;
-    font-weight: bold;
-    margin-right: 10px;
-    }
-    
-    #pagination a {
-    color: #c03;
-    text-decoration: none;
-    }
-    
-    #pagination a:hover {
-    text-decoration: underline;
-    }
-    
-    #pagination span.pagination-numbers {
-    margin-right: 0;
-    }
-    
-    #pagination .pagination-numbers span,
-    #pagination .pagination-numbers a {
-    font-size: 11px;
-}*/
 /*==============================================================================
     SIDEBAR
 ==============================================================================*/
@@ -1171,6 +1178,101 @@ textarea {
 .single #main-content .post-entry .post-footer {
   background-color: transparent;
   padding-bottom: 10px;
+}
+
+/*==============================================================================
+    PAGE
+==============================================================================*/
+.page #main-content .post-entry .post-title {
+  color: #1c1c1c;
+  font-family: CartoGothicStd-Book, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 26px;
+  padding-bottom: 20px;
+}
+
+/*==============================================================================
+    PAGE PARENT
+==============================================================================*/
+.page-parent #main-content {
+  background-color: #f0f1f2;
+  margin-bottom: 24px;
+  -webkit-box-shadow: 0 1px 1px black;
+  box-shadow: 0 1px 1px black;
+  padding: 20px 20px 15px;
+}
+.page-parent #main-content .parent-page-title {
+  color: #1c1c1c;
+  font-family: CartoGothicStd-Book, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 26px;
+  padding-bottom: 18px;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item {
+  background: url("img/gallery-separator.png") no-repeat left bottom;
+  float: left;
+  margin: 0 22px 22px 0;
+  padding-bottom: 15px;
+  max-width: 278px;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item:nth-child(2n) {
+  margin-right: 0;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item:nth-last-of-type(-n+2) {
+  /*background: none;*/
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-title {
+  font-family: CartoGothicStd-Book, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 20px;
+  padding-bottom: 18px;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-title a {
+  color: #1c1c1c;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-img {
+  margin: 0 0 10px;
+  padding: 5px;
+  -webkit-box-shadow: 0px 0px 2px #1c1c1c;
+  box-shadow: 0px 0px 2px #1c1c1c;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-img > a {
+  display: block;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-img img {
+  vertical-align: top;
+  width: 100%;
+  height: 100%;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-content {
+  color: #535353;
+  font-size: 12px;
+  line-height: 20px;
+  min-height: 60px;
+  padding-bottom: 10px;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-footer a {
+  background-color: #424242;
+  color: #f0f1f2;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 24px;
+  padding: 0 8px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px black;
+}
+.page-parent #main-content ul.portfolio-holder li.portfolio-item .portfolio-item-footer a:hover {
+  background-color: #1c1c1c;
+}
+.page-parent #main-content ul.portfolio-holder:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
 }
 
 /*==============================================================================
