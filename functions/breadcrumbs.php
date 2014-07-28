@@ -19,9 +19,9 @@ function gsy_breadcrumbs() {
     if (is_home() || is_front_page()) {
 
         if ($showOnHome == 1)
-            echo '<div id="breadcrumbs"><a href="' . $homeLink . '">www.' . $_SERVER['SERVER_NAME']. '</a> ' . $delimiter . ' ' . $home . '</div><!-- #breadcrumbs -->';
+            echo '<div id="breadcrumbs"><a href="' . $homeLink . '">' . $_SERVER['SERVER_NAME']. '</a> ' . $delimiter . ' ' . $home . '</div><!-- #breadcrumbs -->';
     } else {
-        echo '<div id="breadcrumbs"><a href="' . $homeLink . '">www.' . $_SERVER['SERVER_NAME']. '</a> ' . $delimiter . ' ';
+        echo '<div id="breadcrumbs"><a href="' . $homeLink . '">' . $_SERVER['SERVER_NAME']. '</a> ' . $delimiter . ' ';
 
         if (is_category()) {
             $thisCat = get_category(get_query_var('cat'), false);
