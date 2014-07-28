@@ -1476,6 +1476,42 @@ textarea {
     }
 }
 
+
+/*==============================================================================
+    ERROR 404
+==============================================================================*/
+
+.error404 {
+    #main-content {
+        .post-entry {
+            .post-title {
+                color: $primary-dark-color;
+                font-family: CartoGothicStd-Book, $basic-font-family;
+                font-size: 26px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+/*==============================================================================
+    SEARCH
+==============================================================================*/
+
+.search {
+    #main-content {
+        h1 {
+            background-color: $primary-light-color;
+            color: $primary-dark-color;
+            font-family: CartoGothicStd-Book, $basic-font-family;
+            font-size: 26px;
+            margin-bottom: 24px;
+            padding: 15px 20px 15px;
+        }
+    }
+}
+
 /*==============================================================================
     MEDIA QUERIES
 ==============================================================================*/

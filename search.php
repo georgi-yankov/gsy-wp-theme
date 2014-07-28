@@ -7,54 +7,54 @@
         <!-- ******     MAIN CONTENT      ************************************************** -->
         <!-- ******************************************************************************* -->
         <div id="main-content" class="span8">
+            
+            <h1><?php printf( __( 'Search Results for: %s' ), get_search_query() ); ?></h1>
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                     <article class="post-entry">
                         <div class="post-entry-inner">
 
-                            <h1 class="post-title"><?php the_title(); ?></h1>    
-
-                            <?php get_template_part('inc/post-footer'); ?>
+                            <div class="post-time">
+                                <span></span>
+                                <span>
+                                    <span><?php the_time('d'); ?></span>
+                                    <span><?php the_time('M'); ?>.</span> 
+                                </span>
+                            </div>
 
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="post-img">
                                     <?php
                                     $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-img');
                                     $img_alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
-                                    ?>
-                                    <img alt="<?php echo $img_alt; ?>" src="<?php echo $img[0]; ?>">
+                                    ?>                                    
+                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                        <img alt="<?php echo $img_alt; ?>" src="<?php echo $img[0]; ?>">
+                                    </a>
                                 </div><!-- .post-img -->
                             <?php endif; ?>
 
+                            <h2 class="post-title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h2>    
+
                             <div class="post-body">
-                                <?php echo the_content(); ?>
+                                <?php echo gsy_excerpt_dots(); ?>
                             </div><!-- .post-body -->
 
                         </div><!-- .post-entry-inner -->
 
-                        <?php
-                        // If comments are open or we have at least one comment, load up the comment template.
-                        if (comments_open() || get_comments_number()) {
-                            comments_template();
-                        }
-                        ?>
+                        <?php get_template_part('inc/post-footer'); ?>
 
                     </article><!-- .post-entry -->
 
                 <?php endwhile; ?>
 
-                <!-- PAGINATION -->
-                <?php
-                if (function_exists("pagination")) {
-                    pagination();
-                }
-                ?>
-
             <?php else: ?>
 
                 <div>
-                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                    <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ); ?></p>
                 </div>
 
             <?php endif; ?>

@@ -1276,6 +1276,28 @@ textarea {
 }
 
 /*==============================================================================
+    ERROR 404
+==============================================================================*/
+.error404 #main-content .post-entry .post-title {
+  color: #1c1c1c;
+  font-family: CartoGothicStd-Book, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 26px;
+  padding-bottom: 20px;
+}
+
+/*==============================================================================
+    SEARCH
+==============================================================================*/
+.search #main-content h1 {
+  background-color: #f0f1f2;
+  color: #1c1c1c;
+  font-family: CartoGothicStd-Book, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 26px;
+  margin-bottom: 24px;
+  padding: 15px 20px 15px;
+}
+
+/*==============================================================================
     MEDIA QUERIES
 ==============================================================================*/
 /*********************************************
