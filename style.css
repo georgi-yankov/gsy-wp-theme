@@ -261,7 +261,7 @@ textarea {
   position: absolute;
   text-transform: none;
   width: 140px;
-  z-index: 100;
+  z-index: 200;
   -webkit-transition: height 1s ease-in;
   -moz-transition: height 1s ease-in;
   -o-transition: height 1s ease-in;
