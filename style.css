@@ -259,7 +259,7 @@ textarea {
   display: none;
   padding: 5px 10px;
   position: absolute;
-  text-transform: capitalize;
+  text-transform: none;
   width: 140px;
   z-index: 100;
   -webkit-transition: height 1s ease-in;
