@@ -19,7 +19,7 @@
             ?>
         </title>
         <meta name="description" content="<?php bloginfo( 'description' ); ?>" />
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="GSY,Freelance,Web,Developer,development,design,front-end,back-end, Georgi Yankov" />
         <meta name="author" content="Georgi Yankov" />
         <meta name="robots" content="index, follow" />
         
