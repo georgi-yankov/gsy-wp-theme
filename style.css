@@ -540,19 +540,33 @@ textarea {
   float: left;
   margin: 10px 15px 10px 0;
 }
-#main-content .post-entry .post-body img.alignleft {
+#main-content .post-entry .post-body img.alignleft,
+#main-content .post-entry .post-body .wp-caption.alignleft {
   margin-left: 1px;
 }
 #main-content .post-entry .post-body .alignright {
+  display: inline;
   float: right;
   margin: 10px 0 10px 15px;
 }
-#main-content .post-entry .post-body img.alignright {
-  float: right;
+#main-content .post-entry .post-body img.alignright,
+#main-content .post-entry .post-body .wp-caption.alignright {
   margin-right: 1px;
 }
 #main-content .post-entry .post-body .alignnone {
   margin: 10px;
+}
+#main-content .post-entry .post-body .wp-caption {
+  -webkit-box-shadow: 0px 0px 2px #1c1c1c;
+  box-shadow: 0px 0px 2px #1c1c1c;
+}
+#main-content .post-entry .post-body .wp-caption img {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#main-content .post-entry .post-body .wp-caption .wp-caption-text {
+  margin: 0 5px;
+  padding-bottom: 5px;
 }
 #main-content .post-entry .post-body img {
   padding: 5px;

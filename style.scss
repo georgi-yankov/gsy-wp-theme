@@ -619,22 +619,37 @@ textarea {
                 margin: 10px 15px 10px 0;
             }
             
-            img.alignleft  {
+            img.alignleft,
+            .wp-caption.alignleft {
                 margin-left: 1px;
             }
             
             .alignright {
+                display: inline;
                 float: right;
                 margin: 10px 0 10px 15px;
             }
             
-            img.alignright {
-                float: right;
+            img.alignright,
+            .wp-caption.alignright {
                 margin-right: 1px;
-            }
+            }          
             
             .alignnone {
                 margin: 10px;
+            }
+            
+            .wp-caption {
+                @include box-shadow(0px 0px 2px $primary-dark-color);
+                
+                img {
+                    @include box-shadow(none);
+                }    
+                
+                .wp-caption-text {
+                    margin: 0 5px;
+                    padding-bottom: 5px;
+                }
             }
             
             img {
