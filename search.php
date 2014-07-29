@@ -7,8 +7,8 @@
         <!-- ******     MAIN CONTENT      ************************************************** -->
         <!-- ******************************************************************************* -->
         <div id="main-content" class="span8">
-            
-            <h1><?php printf( __( 'Search Results for: %s' ), get_search_query() ); ?></h1>
+
+            <h1><?php printf(__('Search Results for: %s'), get_search_query()); ?></h1>
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -51,10 +51,17 @@
 
                 <?php endwhile; ?>
 
+                <!-- PAGINATION -->
+                <?php
+                if (function_exists("pagination")) {
+                    pagination();
+                }
+                ?>
+
             <?php else: ?>
 
                 <div>
-                    <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.' ); ?></p>
+                    <p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords.'); ?></p>
                 </div>
 
             <?php endif; ?>
