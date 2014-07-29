@@ -1299,7 +1299,7 @@ textarea {
 }
 
 /*==============================================================================
-    ERROR 404
+    ERROR 404 PAGE
 ==============================================================================*/
 .error404 #main-content .post-entry .post-title {
   color: #1c1c1c;
@@ -1309,7 +1309,7 @@ textarea {
 }
 
 /*==============================================================================
-    SEARCH
+    SEARCH PAGE
 ==============================================================================*/
 .search #main-content h1 {
   background-color: #f0f1f2;
@@ -1318,6 +1318,16 @@ textarea {
   font-size: 26px;
   margin-bottom: 24px;
   padding: 15px 20px 15px;
+}
+
+#no-search-result {
+  background-color: #f0f1f2;
+  padding: 20px 20px 15px;
+  -webkit-box-shadow: 0 0 8px #bdbec5 inset;
+  box-shadow: 0 0 8px #bdbec5 inset;
+  color: #535353;
+  font-size: 13px;
+  line-height: 22px;
 }
 
 /*==============================================================================

@@ -60,9 +60,9 @@
 
             <?php else: ?>
 
-                <div>
+                <div id="no-search-result">
                     <p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords.'); ?></p>
-                </div>
+                </div><!-- #no-search-result -->
 
             <?php endif; ?>
             <?php wp_reset_query(); ?>
