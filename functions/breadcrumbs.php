@@ -18,15 +18,17 @@ function gsy_breadcrumbs() {
 
     if (is_home() || is_front_page()) {
 
-        if ($showOnHome == 1)
-            echo '<div id="breadcrumbs"><a href="' . $homeLink . '">' . $_SERVER['SERVER_NAME']. '</a> ' . $delimiter . ' ' . $home . '</div><!-- #breadcrumbs -->';
+        if ($showOnHome == 1) {
+            echo '<div id="breadcrumbs"><a href="' . $homeLink . '">' . $_SERVER['SERVER_NAME'] . '</a> ' . $delimiter . ' ' . $home . '</div><!-- #breadcrumbs -->';
+        }
     } else {
-        echo '<div id="breadcrumbs"><a href="' . $homeLink . '">' . $_SERVER['SERVER_NAME']. '</a> ' . $delimiter . ' ';
+        echo '<div id="breadcrumbs"><a href="' . $homeLink . '">' . $_SERVER['SERVER_NAME'] . '</a> ' . $delimiter . ' ';
 
         if (is_category()) {
             $thisCat = get_category(get_query_var('cat'), false);
-            if ($thisCat->parent != 0)
+            if ($thisCat->parent != 0) {
                 echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
+            }
             echo $before . '"' . single_cat_title('', false) . '"' . $after;
         } elseif (is_search()) {
             echo $before . 'Results found for "' . get_search_query() . '"' . $after;
@@ -44,8 +46,9 @@ function gsy_breadcrumbs() {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
                 echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-                if ($showCurrent == 1)
+                if ($showCurrent == 1) {
                     echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+                }
             } else {
                 $cat = get_the_category();
                 $cat = $cat[0];
@@ -53,8 +56,9 @@ function gsy_breadcrumbs() {
                 if ($showCurrent == 0)
                     $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
                 echo $cats;
-                if ($showCurrent == 1)
+                if ($showCurrent == 1) {
                     echo $before . get_the_title() . $after;
+                }
             }
         } elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
             $post_type = get_post_type_object(get_post_type());
@@ -65,11 +69,19 @@ function gsy_breadcrumbs() {
             $cat = $cat[0];
             echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
             echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-            if ($showCurrent == 1)
+            if ($showCurrent == 1) {
                 echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
+            }
         } elseif (is_page() && !$post->post_parent) {
-            if ($showCurrent == 1)
-                echo $before . get_the_title() . $after;
+            if ($showCurrent == 1) {
+                if (get_query_var('paged')) {
+                    echo '<a href="' . get_permalink() . '">';
+                    echo $before . get_the_title() . $after;
+                    echo '</a>';
+                } else {
+                    echo $before . get_the_title() . $after;
+                }
+            }
         } elseif (is_page() && $post->post_parent) {
             $parent_id = $post->post_parent;
             $breadcrumbs = array();
@@ -81,8 +93,9 @@ function gsy_breadcrumbs() {
             $breadcrumbs = array_reverse($breadcrumbs);
             for ($i = 0; $i < count($breadcrumbs); $i++) {
                 echo $breadcrumbs[$i];
-                if ($i != count($breadcrumbs) - 1)
+                if ($i != count($breadcrumbs) - 1) {
                     echo ' ' . $delimiter . ' ';
+                }
             }
             if ($showCurrent == 1)
                 echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
@@ -97,11 +110,15 @@ function gsy_breadcrumbs() {
         }
 
         if (get_query_var('paged')) {
-            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
+            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
                 echo ' (';
-            echo __('Page') . ' ' . get_query_var('paged');
-            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
+            }
+            
+            echo ' ' . $delimiter . ' ' . __('Page') . ' ' . get_query_var('paged');
+            
+            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
                 echo ')';
+            }
         }
 
         echo '</div><!-- #breadcrumbs -->';
