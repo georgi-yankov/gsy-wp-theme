@@ -1631,6 +1631,16 @@ textarea {
             }
         }
     }
+    
+    .page-parent {
+        #portfolio-wrapper {            
+            ul.portfolio-holder {
+                li.portfolio-item {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
 }
 
 /*********************************************

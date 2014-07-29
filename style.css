@@ -1378,6 +1378,10 @@ textarea {
   .widget.widget_search .searchform input {
     width: 252px;
   }
+
+  .page-parent #portfolio-wrapper ul.portfolio-holder li.portfolio-item {
+    margin-right: 0;
+  }
 }
 /*********************************************
     to 320px
