@@ -1273,8 +1273,9 @@ textarea {
   color: #535353;
   font-size: 12px;
   line-height: 20px;
-  min-height: 60px;
-  padding-bottom: 10px;
+  height: 60px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 .page-parent #portfolio-wrapper ul.portfolio-holder li.portfolio-item .portfolio-item-footer a {
   background-color: #424242;
