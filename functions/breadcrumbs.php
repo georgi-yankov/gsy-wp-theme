@@ -31,7 +31,7 @@ function gsy_breadcrumbs() {
             }
             echo $before . '"' . single_cat_title('', false) . '"' . $after;
         } elseif (is_search()) {
-            echo $before . 'Results found for "' . get_search_query() . '"' . $after;
+            echo $before . 'Search Results for: ' . get_search_query() . $after;
         } elseif (is_day()) {
             echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
             echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
