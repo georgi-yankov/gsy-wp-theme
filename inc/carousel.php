@@ -29,7 +29,7 @@
 
                         <div class="carousel-feature">
                             <a href="<?php the_permalink(); ?>">                                
-                                <img class="carousel-image" alt="<?php echo $img_alt; ?>" src="<?php echo $img[0]; ?>">
+                                <img class="carousel-image" alt="<?php echo esc_attr($img_alt); ?>" src="<?php echo $img[0]; ?>">
                             </a>
                         </div><!-- .carousel-feature -->
 
