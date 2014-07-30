@@ -39,20 +39,22 @@
                                 </span>
                             </div>
 
+                            <?php $the_title = get_the_title(); ?>
+                            
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="post-img">
                                     <?php
                                     $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-img');
                                     $img_alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
                                     ?>                                    
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <a href="<?php the_permalink(); ?>" title="<?php echo $the_title; ?>">
                                         <img alt="<?php echo $img_alt; ?>" src="<?php echo $img[0]; ?>">
                                     </a>
                                 </div><!-- .post-img -->
                             <?php endif; ?>
 
                             <h2 class="post-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                <a href="<?php the_permalink(); ?>"><?php echo $the_title; ?></a>
                             </h2>    
 
                             <div class="post-body">

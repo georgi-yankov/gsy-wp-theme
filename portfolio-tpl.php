@@ -36,7 +36,8 @@
 
                             <li class="portfolio-item">
                                 <h3 class="portfolio-item-title">
-                                    <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+                                    <?php $the_title = get_the_title(); ?>
+                                    <a href="<?php the_permalink(); ?>" title="<?php echo $the_title; ?>"><?php echo $the_title; ?></a>
                                 </h3>
 
                                 <div class="portfolio-item-img">
