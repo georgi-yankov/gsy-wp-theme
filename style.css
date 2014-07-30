@@ -582,6 +582,9 @@ textarea {
 #main-content .post-entry .post-body a:hover {
   text-decoration: none;
 }
+#main-content .post-entry .post-body ul, #main-content .post-entry .post-body ol {
+  padding-bottom: 15px;
+}
 #main-content .post-entry .post-body ul li {
   list-style-type: disc;
   margin-left: 30px;
