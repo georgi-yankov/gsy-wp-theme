@@ -28,7 +28,7 @@
                                 $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'post-img');
                                 $img_alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
                                 ?>
-                                <img alt="<?php echo $img_alt; ?>" src="<?php echo $img[0]; ?>">
+                                <img alt="<?php echo esc_attr($img_alt); ?>" src="<?php echo $img[0]; ?>">
                             </div><!-- .post-img -->
                         <?php endif; ?>
 
