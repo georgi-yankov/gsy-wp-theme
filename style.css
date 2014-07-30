@@ -369,7 +369,7 @@ textarea {
 }
 
 #carousel-left {
-  background: url("img/carousel-arrows.png") 0 0 no-repeat;
+  background: url("img/main-sprite.png") 0 0 no-repeat;
   position: absolute;
   top: 118px;
   left: 0;
@@ -380,7 +380,7 @@ textarea {
 }
 
 #carousel-right {
-  background: url("img/carousel-arrows.png") -44px 0 no-repeat;
+  background: url("img/main-sprite.png") -44px 0 no-repeat;
   position: absolute;
   top: 118px;
   right: 0;
@@ -874,14 +874,14 @@ textarea {
   width: 100%;
 }
 #main-content .post-entry .comment-form input[type="submit"] {
-  background: url("img/add-comment.png") no-repeat 0 0;
+  background: url("img/main-sprite.png") no-repeat -88px 0;
   border: none;
   font-size: 0px;
   width: 113px;
   height: 22px;
 }
 #main-content .post-entry .comment-form input[type="submit"]:hover {
-  background-position: 0 -22px;
+  background-position: -88px -22px;
   cursor: pointer;
 }
 #main-content .post-entry .comment-form label {
@@ -1127,7 +1127,7 @@ textarea {
   height: 19px;
 }
 .widget.widget_search .searchform a {
-  background: url(img/go_search.png) no-repeat center 4px;
+  background: url(img/main-sprite.png) no-repeat -201px 0;
   display: block;
   float: right;
   vertical-align: top;
@@ -1135,7 +1135,7 @@ textarea {
   height: 19px;
 }
 .widget.widget_search .searchform a:hover {
-  background-position: center -16px;
+  background-position: -201px -20px;
 }
 
 /*********************************************
