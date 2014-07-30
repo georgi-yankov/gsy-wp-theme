@@ -48,7 +48,7 @@
                                         $img_alt = get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true);
                                         ?>
                                         <a href="<?php the_permalink(); ?>">
-                                            <img alt="<?php echo $img_alt; ?>" src="<?php echo $img[0]; ?>">
+                                            <img alt="<?php echo esc_attr($img_alt); ?>" src="<?php echo $img[0]; ?>">
                                         </a>
 
                                     <?php else : ?>
