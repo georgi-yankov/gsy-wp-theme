@@ -4,32 +4,32 @@
 <!--[if IE 8]>         <html class="lt-ie9" <?php language_attributes(); ?>> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="ie9" <?php language_attributes(); ?>> <!--<![endif]-->
     <head>
-        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <meta charset="<?php bloginfo('charset'); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>
             <?php
-            wp_title( '|', true, 'right' );
+            wp_title('|', true, 'right');
 
-            bloginfo( 'name' );
+            bloginfo('name');
 
-            $site_description = get_bloginfo( 'description', 'display' );
-            if ( $site_description && ( is_home() || is_front_page() ) ) {
+            $site_description = get_bloginfo('description', 'display');
+            if ($site_description && ( is_home() || is_front_page() )) {
                 echo " | $site_description";
             }
             ?>
         </title>
-        <meta name="description" content="<?php bloginfo( 'description' ); ?>" />
+        <meta name="description" content="<?php bloginfo('description'); ?>" />
         <meta name="keywords" content="GSY,Freelance,Web,Developer,development,design,front-end,back-end, Georgi Yankov" />
         <meta name="author" content="Georgi Yankov" />
         <meta name="robots" content="index, follow" />
-        
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
         <link rel="icon" type="image/ico" href="<?php echo get_template_directory_uri(); ?>/favicon.jpg" />
 
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        
+
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
@@ -45,32 +45,33 @@
             <header id="header" role="banner">
 
                 <div id="breadcrumbs-wrapper">
-                    
-                    <?php if ( function_exists('gsy_breadcrumbs') ) : ?>
+
+                    <?php if (function_exists('gsy_breadcrumbs')) : ?>
                         <?php gsy_breadcrumbs(); ?>
                     <?php endif; ?>
-                    
+
                 </div><!-- #breadcrumbs-wrapper -->
 
                 <div class="row-fluid">
                     <div id="logo" class="span5">
-                        <h1><a href="<?php echo home_url(); ?>"><?php echo bloginfo( 'name' ); ?></a></h1>
-                        <h2><?php bloginfo( 'description' ); ?></h2>
+                        <h1><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php echo bloginfo('name'); ?></a></h1>
+                        <h2><?php bloginfo('description'); ?></h2>
                     </div>
 
                     <nav id="main-nav" class="span7" role="navigation">
                         <?php
-                        if ( has_nav_menu('main-navigation') ) {
-                                wp_nav_menu(array(
-                                        'theme_location' => 'main-navigation',
-                                        'container' => false,
-                                        'depth' => 2,
-                        ));
-                        } else { ?>
-                                <ul>
-                                    <li><a href="<?php echo home_url(); ?>" title="Return to Home">Home</a></li>
-                                </ul>
-                        <?php } ?>
+                        if (has_nav_menu('main-navigation')) {
+                            wp_nav_menu(array(
+                                'theme_location' => 'main-navigation',
+                                'container' => false,
+                                'depth' => 2,
+                            ));
+                        } else {
+                            ?>
+                            <ul>
+                                <li><a href="<?php echo esc_url(home_url('/')); ?>" title="Return to Home" rel="home">Home</a></li>
+                            </ul>
+<?php } ?>
                     </nav>
                 </div><!-- .row-fluid -->
 
