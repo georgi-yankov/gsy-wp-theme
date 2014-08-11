@@ -313,7 +313,7 @@ textarea {
             }
         }
     }    
-    li.parent {
+    li.menu-item-has-children {
         padding-right: 5px;
         position: relative;
         >a {
@@ -1785,7 +1785,7 @@ div.cpefb_error:after
                 width: 100%;
             }
         }
-        li.parent {
+        li.menu-item-has-children {
             >a {
                 background: none;
                 padding-right: 5px;

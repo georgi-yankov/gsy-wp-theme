@@ -246,15 +246,15 @@ textarea {
 #main-nav > ul > li:hover span.dropdown-arrow {
   display: block;
 }
-#main-nav li.parent {
+#main-nav li.menu-item-has-children {
   padding-right: 5px;
   position: relative;
 }
-#main-nav li.parent > a {
+#main-nav li.menu-item-has-children > a {
   background: url("img/arrow.png") right center no-repeat;
   padding-right: 16px;
 }
-#main-nav li.parent ul {
+#main-nav li.menu-item-has-children ul {
   background-color: #1d1d1d;
   display: none;
   padding: 5px 10px;
@@ -268,7 +268,7 @@ textarea {
   -ms-transition: height 1s ease-in;
   transition: height 1s ease-in;
 }
-#main-nav li.parent ul a {
+#main-nav li.menu-item-has-children ul a {
   color: #f0f1f2;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 12px;
@@ -278,20 +278,20 @@ textarea {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
 }
-#main-nav li.parent ul a:hover {
+#main-nav li.menu-item-has-children ul a:hover {
   text-decoration: underline;
 }
-#main-nav li.parent ul li {
+#main-nav li.menu-item-has-children ul li {
   border-bottom: 1px solid #0c0c0c;
   border-top: 1px solid #363636;
 }
-#main-nav li.parent ul li:first-child {
+#main-nav li.menu-item-has-children ul li:first-child {
   border-top: none;
 }
-#main-nav li.parent ul li:last-child {
+#main-nav li.menu-item-has-children ul li:last-child {
   border-bottom: none;
 }
-#main-nav li.parent span.dropdown-arrow {
+#main-nav li.menu-item-has-children span.dropdown-arrow {
   /*background-image: url("img/dropdown-arrow.png");*/
   display: none;
   position: absolute;
@@ -1683,7 +1683,7 @@ div.cpefb_error:after {
     text-align: center;
     width: 100%;
   }
-  #main-nav li.parent > a {
+  #main-nav li.menu-item-has-children > a {
     background: none;
     padding-right: 5px;
   }

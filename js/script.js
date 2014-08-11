@@ -2,9 +2,7 @@
     $(document).ready(function() {
         var searchForm;
 
-        $('#main-nav > ul > li:has(ul)')
-                .addClass('parent')
-                .prepend('<span class="dropdown-arrow"></span>');
+        // $('#main-nav > ul > li:has(ul)').prepend('<span class="dropdown-arrow"></span>');
 
         // Feature Carousel
         $("#carousel").featureCarousel({
