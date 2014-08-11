@@ -42,7 +42,8 @@ body {
     background-image: -moz-radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
     background-image: -ms-radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
     background-image: -o-radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
-    background-image: radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
+    // generates an error in the W3C validator
+    // background-image: radial-gradient(center center, ellipse cover, #2a2a2a -90%, transparent);
 }
 
 .lt-ie9 {
