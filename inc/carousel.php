@@ -2,21 +2,18 @@
     <div id="carousel">
 
         <?php
-        $args = array(
+        query_posts(array(
             'post_type' => 'page',
             'orderby' => 'date',
             'order' => 'DESC',
             'posts_per_page' => -1
-        );
-
-        // The Query
-        $the_query = new WP_Query($args);
+        ));
         ?>
 
-        <?php if ($the_query->have_posts()) : ?>
+        <?php if (have_posts()) : ?>
             <?php $exist_meta_box_checked = false; ?>
-            <?php while (($the_query->have_posts())) : ?>
-                <?php $the_query->the_post(); ?>                
+            <?php while ((have_posts())) : ?>
+                <?php the_post(); ?>                
                 <?php // Is carousel checkbox checked? ?>
                 <?php // In order to work install this WP plugin: https://github.com/georgi-yankov/gsy-meta-box-for-carousel ?>
                 <?php if ((get_post_meta($post->ID, 'gsy_carousel_meta_box_check', true)) AND ((get_post_meta($post->ID, 'gsy_carousel_meta_box_check', true)) == 'on')) : ?>
@@ -58,7 +55,7 @@
             <?php get_template_part('inc/carousel-image-placeholder'); ?>
 
         <?php endif; ?>
-        <?php wp_reset_postdata(); ?>
+        <?php wp_reset_query(); ?>
 
     </div><!-- #carousel -->
 

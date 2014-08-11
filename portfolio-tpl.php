@@ -20,22 +20,19 @@
 
                 <?php
                 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-                $args = array(
+                query_posts(array(
                     'post_type' => 'page',
                     'post_parent' => $post->ID,
                     'orderby' => 'date',
                     'order' => 'DESC',
                     'paged' => $paged,
                     'posts_per_page' => 4,
-                );
-
-                // The Query
-                $the_query = new WP_Query($args);
+                ));
                 ?>
 
-                <?php if ($the_query->have_posts()) : ?>
+                <?php if (have_posts()) : ?>
                     <ul class="portfolio-holder">
-                        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                        <?php while (have_posts()) : the_post(); ?>
 
                             <li class="portfolio-item">
                                 <h3 class="portfolio-item-title">
@@ -88,8 +85,8 @@
                 pagination();
             }
             ?>
-
-            <?php wp_reset_postdata(); ?>
+            
+            <?php wp_reset_query(); ?>
 
         </div><!-- #main-content -->
 

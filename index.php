@@ -17,19 +17,16 @@
 
             <?php
             $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-            $args = array(
+            query_posts(array(
                 'post_type' => 'post',
                 'orderby' => 'date',
                 'order' => 'DESC',
                 'paged' => $paged,
                 'cat' => -0,
-            );
-
-            // The Query
-            $the_query = new WP_Query($args);
+            ));
             ?>
 
-            <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class('post-entry'); ?>>
                         <div class="post-entry-inner">
@@ -43,7 +40,7 @@
                             </div>
 
                             <?php $the_title = get_the_title(); ?>
-
+                            
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="post-img">
                                     <?php
@@ -86,7 +83,7 @@
                 </div>
 
             <?php endif; ?>
-            <?php wp_reset_postdata(); ?>
+            <?php wp_reset_query(); ?>
 
         </div><!-- #main-content -->
 
