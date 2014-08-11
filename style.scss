@@ -1624,7 +1624,7 @@ div.cpefb_error:after
 .cpp_form { text-align:left}
 .pbreak{display:none}
 .pbreak.pb0{display:block}
-.pbreak .pbPrevious,.pbreak .pbNext,.pbSubmit{background:#ccc;color:#000;display:block;float:left;cursor:pointer;margin:0px 10px 0px 0px !important;padding:5px 20px} // changed
+.pbreak .pbPrevious,.pbreak .pbNext,.pbSubmit{background:#ccc;color:#000;display:block;float:left;cursor:pointer;margin:0px 10px 10px 0px !important;padding:5px 20px} // changed
 .pbreak.pb0 .pbPrevious{display:none}
 .pbreak.pbEnd .pbNext{display:none}
 .ignore{border:5px solid black}
