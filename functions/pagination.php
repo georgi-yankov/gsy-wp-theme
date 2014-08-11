@@ -9,8 +9,8 @@ function pagination($pages = '', $range = 1) {
     }
 
     if ($pages == '') {
-        global $wp_query;
-        $pages = $wp_query->max_num_pages;
+        global $the_query;
+        $pages = $the_query->max_num_pages;
         if (!$pages) {
             $pages = 1;
         }
