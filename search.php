@@ -12,7 +12,7 @@
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                    <article class="post-entry">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('post-entry'); ?>>
                         <div class="post-entry-inner">
 
                             <div class="post-time">

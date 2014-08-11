@@ -31,7 +31,7 @@
 
             <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-                    <article class="post-entry">
+            <article id="post-<?php the_ID(); ?>" <?php post_class('post-entry'); ?>>
                         <div class="post-entry-inner">
 
                             <div class="post-time">
