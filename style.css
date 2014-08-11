@@ -504,7 +504,7 @@ textarea {
 #main-content .post-entry .post-body h1, #main-content .post-entry .post-body h2, #main-content .post-entry .post-body h3, #main-content .post-entry .post-body h4, #main-content .post-entry .post-body h5, #main-content .post-entry .post-body h6 {
   font-family: CartoGothicStd-Book, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding: 5px 0 10px;
   word-wrap: break-word;
 }
 #main-content .post-entry .post-body h1 {
