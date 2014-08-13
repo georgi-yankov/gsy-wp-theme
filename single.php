@@ -28,7 +28,7 @@
                             <?php endif; ?>
 
                             <div class="post-body">
-                                <?php echo the_content(); ?>
+                                <?php the_content(); ?>
                             </div><!-- .post-body -->
 
                         </div><!-- .post-entry-inner -->

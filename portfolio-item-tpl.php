@@ -33,7 +33,7 @@
                         <?php endif; ?>
 
                         <div class="post-body">
-                            <?php echo the_content(); ?>
+                            <?php the_content(); ?>
 
                             <?php if (get_post_custom_values('visit online') || get_post_custom_values('view source')) : ?>
                                 <ul class="portfolio-buttons-holder">
