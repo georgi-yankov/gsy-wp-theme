@@ -1087,6 +1087,15 @@ textarea {
         }      
     }
     
+    .no-posts {
+        background-color: $primary-light-color;
+        color: #535353;
+        font-size: 13px;
+        line-height: 22px;
+        margin-bottom: 24px;
+        padding: 20px 20px 15px;        
+    }
+    
 }
 
 .lt-ie9 #main-content {

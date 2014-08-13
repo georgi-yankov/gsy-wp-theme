@@ -81,7 +81,7 @@
 
             <?php else: ?>
 
-                <div>
+                <div class="no-posts">
                     <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
                 </div>
 
