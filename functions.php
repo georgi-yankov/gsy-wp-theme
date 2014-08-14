@@ -41,6 +41,17 @@ if (function_exists('add_image_size')) {
 }
 
 /* ==================================================================================================
+  REMOVE DIMENSIONS OF IMAGES SEND TO EDITOR
+  ================================================================================================== */
+
+add_filter('image_send_to_editor', 'gsy_remove_thumbnail_dimensions', 10);
+
+function gsy_remove_thumbnail_dimensions($html) {
+    $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
+    return $html;
+}
+
+/* ==================================================================================================
   ADDING ADDITIONAL CSS AND JS
   ================================================================================================== */
 
