@@ -478,7 +478,7 @@ textarea {
 #main-content .post-entry .post-img img {
   vertical-align: top;
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
 }
 #main-content .post-entry .post-title {
   line-height: 28px;
@@ -512,8 +512,8 @@ textarea {
   line-height: 30px;
 }
 #main-content .post-entry .post-body h2 {
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 22px;
+  line-height: 30px;
 }
 #main-content .post-entry .post-body h3 {
   font-size: 18px;
