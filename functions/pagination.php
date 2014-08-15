@@ -10,7 +10,11 @@ function pagination($pages = '', $range = 1) {
 
     if ($pages == '') {
         global $the_query;
-        $pages = $the_query->max_num_pages;
+        
+        if (isset($the_query->max_num_pages)) {
+            $pages = $the_query->max_num_pages;
+        }        
+        
         if (!$pages) {
             $pages = 1;
         }
