@@ -8,7 +8,7 @@
         <!-- ******************************************************************************* -->
         <div id="main-content" class="span8">
 
-            <h1><?php printf(__('Search Results for: %s'), get_search_query()); ?></h1>
+            <h1><?php printf(__('Search Results for: %s', 'gsy-wp-theme'), get_search_query()); ?></h1>
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -63,7 +63,7 @@
             <?php else: ?>
 
                 <div id="no-search-result">
-                    <p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords.'); ?></p>
+                    <p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'gsy-wp-theme'); ?></p>
                 </div><!-- #no-search-result -->
 
             <?php endif; ?>

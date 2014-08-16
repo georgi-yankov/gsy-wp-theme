@@ -7,7 +7,7 @@
 if (function_exists('register_nav_menus')) {
     register_nav_menus(
             array(
-                'main-navigation' => 'Main Navigation',
+                'main-navigation' => __('Main Navigation', 'gsy-wp-theme'),
             )
     );
 }
@@ -17,9 +17,9 @@ if (function_exists('register_nav_menus')) {
   ================================================================================================== */
 
 register_sidebar(array(
-    'name' => sprintf(__('Right Hand Sidebar'), 1),
+    'name' => sprintf(__('Right Hand Sidebar', 'gsy-wp-theme'), 1),
     'id' => 'right-sidebar',
-    'description' => __('Widgets in this area will be shown on the right-hand side.'),
+    'description' => __('Widgets in this area will be shown on the right-hand side.', 'gsy-wp-theme'),
     'before_widget' => '<article id="%1$s" class="widget %2$s">',
     'after_widget' => '</div><!-- .widget-body --></article>',
     'before_title' => '<h3 class="widget-header">',

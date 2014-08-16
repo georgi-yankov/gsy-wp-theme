@@ -82,7 +82,7 @@
             <?php else: ?>
 
                 <div class="no-posts">
-                    <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                    <p><?php _e('Sorry, no posts matched your criteria.', 'gsy-wp-theme'); ?></p>
                 </div>
 
             <?php endif; ?>

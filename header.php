@@ -69,7 +69,11 @@
                         } else {
                             ?>
                             <ul>
-                                <li><a href="<?php echo esc_url(home_url('/')); ?>" title="Return to Home" rel="home">Home</a></li>
+                                <li>
+                                    <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php _e('Return to Home', 'Your home page', 'gsy-wp-theme'); ?>" rel="home">
+                                        <?php _e('Home', 'text for your home page', 'gsy-wp-theme'); ?>
+                                    </a>
+                                </li>
                             </ul>
 <?php } ?>
                     </nav>

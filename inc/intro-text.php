@@ -13,7 +13,7 @@ if($intro_text && $intro_text_2) {
 } else if ($intro_text_2) {
     $intro_text_result = $intro_text_2;
 } else {
-    $intro_text_result = "Place your intro text here...";
+    $intro_text_result = __('Place your intro text here...', 'gsy-wp-theme');
 }
 ?>
 

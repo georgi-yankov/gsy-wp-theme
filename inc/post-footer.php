@@ -9,7 +9,7 @@
     ?>
     <span class="footer-icon icon-comment">
         <a href="<?php comments_link(); ?>">
-            <?php echo $total_comments; ?> <?php echo $total_comments == 1 ? 'comment' : 'comments'; ?>
+            <?php echo $total_comments; ?> <?php echo $total_comments == 1 ? __('comment', 'gsy-wp-theme') : __('comments', 'gsy-wp-theme'); ?>
         </a>
     </span>
 
@@ -22,7 +22,7 @@
     if ($categories) {
         echo '<span class="footer-icon icon-category">';
         foreach ($categories as $category) {
-            $output .= '<a href="' . get_category_link($category->term_id) . '" title="' . esc_attr(sprintf(__("View all posts in %s"), $category->name)) . '">';
+            $output .= '<a href="' . get_category_link($category->term_id) . '" title="' . esc_attr(sprintf(__("View all posts in %s", 'gsy-wp-theme'), $category->name)) . '">';
             $output .= $category->cat_name;
             $output .= '</a>';
             $output .= $seperator;

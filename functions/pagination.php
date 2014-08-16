@@ -24,7 +24,7 @@ function pagination($pages = '', $range = 1) {
         echo "<div id='pagination'>";
         echo "<p>";
         if ($paged > 1 && $showitems < $pages) {
-            echo "<a class=\"pagination-previous\" href='" . get_pagenum_link($paged - 1) . "'>" . __('Previous') . "</a>";
+            echo "<a class=\"pagination-previous\" href='" . get_pagenum_link($paged - 1) . "'>" . __('Previous', 'gsy-wp-theme') . "</a>";
         }
 
         echo "<span class='pagination-numbers'>";
@@ -40,7 +40,7 @@ function pagination($pages = '', $range = 1) {
         echo "</span><!-- .pagination-numbers -->";
 
         if ($paged < $pages && $showitems < $pages) {
-            echo "<a class=\"pagination-next\" href=\"" . get_pagenum_link($paged + 1) . "\">" . __('Next') . "</a>";
+            echo "<a class=\"pagination-next\" href=\"" . get_pagenum_link($paged + 1) . "\">" . __('Next', 'gsy-wp-theme') . "</a>";
         }
         echo "</p>";
         echo "</div><!-- #pagination -->";

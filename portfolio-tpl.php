@@ -57,7 +57,7 @@
                                     <?php else : ?>
 
                                         <a href="<?php the_permalink(); ?>">
-                                            <img alt="<?php _e('Image Placeholder') ?>" src="<?php echo get_template_directory_uri(); ?>/img/portfolio-item-placeholder.jpg">
+                                            <img alt="<?php _e('Image Placeholder', 'gsy-wp-theme') ?>" src="<?php echo get_template_directory_uri(); ?>/img/portfolio-item-placeholder.jpg">
                                         </a>  
 
                                     <?php endif; ?>
@@ -75,7 +75,7 @@
                 <?php else: ?>
 
                     <div>
-                        <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+                        <p><?php _e('Sorry, no posts matched your criteria.', 'gsy-wp-theme'); ?></p>
                     </div>
 
                 <?php endif; ?>                

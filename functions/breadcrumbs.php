@@ -8,7 +8,7 @@ function gsy_breadcrumbs() {
 
     $showOnHome = 1; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $delimiter = '&raquo;'; // delimiter between crumbs
-    $home = 'Home'; // text for the 'Home' link
+    $home = _x('Home', 'text for your home page', 'gsy-wp-theme'); // text for the 'Home' link
     $showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $before = '<span class="current_crumb">'; // tag before the current crumb
     $after = '</span>'; // tag after the current crumb
@@ -31,7 +31,7 @@ function gsy_breadcrumbs() {
             }
             echo $before . '"' . single_cat_title('', false) . '"' . $after;
         } elseif (is_search()) {
-            echo $before . 'Search Results for: ' . get_search_query() . $after;
+            echo $before . __('Search Results for: ', 'gsy-wp-theme') . get_search_query() . $after;
         } elseif (is_day()) {
             echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
             echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
@@ -100,11 +100,11 @@ function gsy_breadcrumbs() {
             if ($showCurrent == 1)
                 echo ' ' . $delimiter . ' ' . $before . get_the_title() . $after;
         } elseif (is_tag()) {
-            echo $before . 'Posts tagged "' . single_tag_title('', false) . '"' . $after;
+            echo $before . __('Posts tagged "', 'gsy-wp-theme') . single_tag_title('', false) . '"' . $after;
         } elseif (is_author()) {
             global $author;
             $userdata = get_userdata($author);
-            echo $before . 'Posts from ' . $userdata->display_name . $after;
+            echo $before . __('Posts from ', 'gsy-wp-theme') . $userdata->display_name . $after;
         } elseif (is_404()) {
             echo $before . 'Error 404' . $after;
         }
@@ -114,7 +114,7 @@ function gsy_breadcrumbs() {
                 echo ' (';
             }
             
-            echo ' ' . $delimiter . ' ' . __('Page') . ' ' . get_query_var('paged');
+            echo ' ' . $delimiter . ' ' . __('Page', 'gsy-wp-theme') . ' ' . get_query_var('paged');
             
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author()) {
                 echo ')';

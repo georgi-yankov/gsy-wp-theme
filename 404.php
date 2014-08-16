@@ -10,10 +10,10 @@
             <article class="post-entry">
                 <div class="post-entry-inner">
 
-                    <h1 class="post-title"><?php _e('Not Found'); ?></h1>
+                    <h1 class="post-title"><?php _e('Not Found', 'gsy-wp-theme'); ?></h1>
 
                     <div class="post-body">
-                        <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?' ); ?></p>
+                        <p><?php _e('It looks like nothing was found at this location. Maybe try a search?', 'gsy-wp-theme'); ?></p>
                     </div><!-- .post-body -->
 
                 </div><!-- .post-entry-inner -->
