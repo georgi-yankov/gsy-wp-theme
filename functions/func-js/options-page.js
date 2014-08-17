@@ -41,8 +41,8 @@
 
             function removeIntroText(event) {
                 event.preventDefault();
-                addMoreIntroTextButton.show('slow');
-                introTextSecondTr.hide('slow');
+                addMoreIntroTextButton.show();
+                introTextSecondTr.hide();
                 $('textarea', introTextSecondTr).val('');
             }
         })();
