@@ -60,14 +60,14 @@ function section_cb() {
 function intro_text_setting() {
     $options = get_option('plugin_options');
 
-    echo "<textarea name='plugin_options[intro_text]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . esc_html($options['intro_text']) . "</textarea>";
+    echo "<textarea name='plugin_options[intro_text]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . esc_textarea($options['intro_text']) . "</textarea>";
 }
 
 // Intro Text 2
 function intro_text_2_setting() {
     $options = get_option('plugin_options');
 
-    echo "<textarea name='plugin_options[intro_text_2]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . esc_html($options['intro_text_2']) . "</textarea>";
+    echo "<textarea name='plugin_options[intro_text_2]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . esc_textarea($options['intro_text_2']) . "</textarea>";
 }
 
 /* * ***********************************************
