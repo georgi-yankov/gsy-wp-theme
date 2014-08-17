@@ -71,6 +71,19 @@ function gsy_adding_scripts() {
 }
 
 /* ==================================================================================================
+  FILTERS
+  ================================================================================================== */
+
+add_filter('the_content', 'gsy_profanity_filter');
+
+function gsy_profanity_filter($content) {
+    $profanities = array('fuck'); // put other words in the array
+
+    $content = str_ireplace($profanities, '[censored]', $content);
+    return $content;
+}
+
+/* ==================================================================================================
   REQUIRE FILES
   ================================================================================================== */
 
