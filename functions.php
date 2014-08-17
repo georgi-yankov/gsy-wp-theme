@@ -36,7 +36,7 @@ if (function_exists('add_theme_support')) {
 
 if (function_exists('add_image_size')) {
     add_image_size('carousel-img', 450, 230, true);
-    add_image_size('post-img', 570, 250, true);
+    add_image_size('post-img', 570, 256, true);
     add_image_size('portfolio-item-img-small', 268, 144, true);
 }
 
