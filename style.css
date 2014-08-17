@@ -1057,12 +1057,12 @@ textarea {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.widget .widget-body {
+.widget ul {
   color: #fff;
   line-height: 20px;
   padding: 14px 18px 18px 18px;
 }
-.widget .widget-body > ul:after {
+.widget ul:after {
   clear: both;
   content: "";
   display: block;
@@ -1119,6 +1119,9 @@ textarea {
 /*********************************************
     WIDGET SEARCH
 *********************************************/
+.widget.widget_search .searchform-wrapper {
+  padding: 14px 18px 18px 18px;
+}
 .widget.widget_search .searchform {
   background-color: #262626;
   border: solid #2f2f2f 1px;
@@ -1681,20 +1684,24 @@ div.cpefb_error:after {
     background: none;
     border-bottom: 1px solid #0b0b0b;
   }
-  .widget .widget-body {
+  .widget ul {
     border-top: 1px solid #393939;
   }
 
   .widget.widget_categories ul li {
-    background: none;
     margin: 0 17px 0 0 !important;
     padding: 0 0 6px 0 !important;
   }
 
-  .widget.widget_recent_entries ul li {
-    background: url("img/widget-442-line.png") center bottom no-repeat;
+  .widget.widget_categories ul li,
+  .widget.widget_recent_entries ul li,
+  .widget.widget_garp_widget ul li {
+    background: none;
   }
 
+  .widget.widget_search .searchform-wrapper {
+    border-top: 1px solid #393939;
+  }
   .widget.widget_search .searchform input {
     width: 412px;
   }
@@ -1705,10 +1712,6 @@ div.cpefb_error:after {
 @media (max-width: 480px) {
   #intro-text {
     display: none;
-  }
-
-  .widget.widget_recent_entries ul li {
-    background: url("img/widget-282-line.png") center bottom no-repeat;
   }
 
   .widget.widget_search .searchform input {
@@ -1756,10 +1759,6 @@ div.cpefb_error:after {
 
   .widget.widget_categories ul li {
     width: 100%;
-  }
-
-  .widget.widget_recent_entries ul li {
-    background: url("img/widget-202-line.png") center bottom no-repeat;
   }
 
   .widget.widget_search .searchform input {

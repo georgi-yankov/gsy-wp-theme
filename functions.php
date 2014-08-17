@@ -21,9 +21,9 @@ register_sidebar(array(
     'id' => 'right-sidebar',
     'description' => __('Widgets in this area will be shown on the right-hand side.', 'gsy-wp-theme'),
     'before_widget' => '<article id="%1$s" class="widget %2$s">',
-    'after_widget' => '</div><!-- .widget-body --></article>',
+    'after_widget' => '</article>',
     'before_title' => '<h3 class="widget-header">',
-    'after_title' => '</h3><div class="widget-body">'
+    'after_title' => '</h3>'
 ));
 
 /* ==================================================================================================
