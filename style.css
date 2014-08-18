@@ -1089,6 +1089,11 @@ textarea {
   margin: 0 17px 0 0;
   padding: 4px 0 8px;
   width: 122px;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .widget.widget_categories ul li:nth-child(1) {
   padding-top: 0;
@@ -1100,15 +1105,9 @@ textarea {
   margin-right: 0;
 }
 .widget.widget_categories ul li a {
-  background: url("img/arrow.png") left 5px no-repeat;
+  background: url("img/arrow.png") left 4px no-repeat;
   color: #fff;
-  display: block;
   padding-left: 20px;
-  overflow: hidden;
-  -ms-text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .widget.widget_categories ul li a:hover {
   text-decoration: underline;

@@ -1248,6 +1248,7 @@ textarea {
             margin: 0 17px 0 0;
             padding: 4px 0 8px;
             width: 122px;
+            @include overflow-safe;            
             &:nth-child(1) {
                 padding-top: 0;
             }
@@ -1258,11 +1259,9 @@ textarea {
                 margin-right: 0;
             }
             a {
-                background: url("img/arrow.png") left 5px no-repeat;
+                background: url("img/arrow.png") left 4px no-repeat;
                 color: #fff;
-                display: block;
                 padding-left: 20px;
-                @include overflow-safe;
                 &:hover {
                     text-decoration: underline;
                 }
