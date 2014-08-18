@@ -504,6 +504,17 @@ textarea {
   line-height: 22px;
   overflow: hidden;
 }
+#main-content .post-entry .post-body code {
+  background: #e1e2e2;
+  border: solid 1px #d2d2d2;
+  font-family: 'Source Code Pro', Monaco, monospace;
+  font-size: 12px;
+  padding: 4px 4px 1px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
 #main-content .post-entry .post-body p {
   padding-bottom: 15px;
 }
