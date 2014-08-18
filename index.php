@@ -4,8 +4,12 @@
 <!-- ******     CAROUSEL      ****************************************************** -->
 <!-- ******************************************************************************* -->
 
-<?php get_template_part('inc/carousel'); ?>
-<?php get_template_part('inc/intro-text'); ?>
+<?php
+if (!is_category()) {
+    get_template_part('inc/carousel');
+    get_template_part('inc/intro-text');
+}
+?>
 
 <div id="middle" class="container-fluid">
     <div class="row-fluid">
@@ -17,7 +21,7 @@
 
             <?php
             $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-            $cat = get_query_var( 'cat' ) ? get_query_var( 'cat' ) : 0;
+            $cat = get_query_var('cat') ? get_query_var('cat') : 0;
             $args = array(
                 'post_type' => 'post',
                 'orderby' => 'date',
@@ -32,7 +36,7 @@
 
             <?php if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post(); ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php post_class('post-entry'); ?>>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('post-entry'); ?>>
                         <div class="post-entry-inner">
 
                             <div class="post-time">
@@ -97,9 +101,9 @@
         <?php get_sidebar() ?>
 
     </div><!-- .row-fluid -->
-    
+
     <a href="#" id="scroll-to-top-btn"></a>
-    
+
 </div><!-- #middle -->
 
 <!-- ******************************************************************************* -->
