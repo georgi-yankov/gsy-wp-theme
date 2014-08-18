@@ -71,7 +71,7 @@ function gsy_adding_scripts() {
 }
 
 /* ==================================================================================================
-  FILTERS
+  PROFANITY FILTER
   ================================================================================================== */
 
 add_filter('the_content', 'gsy_profanity_filter');
@@ -81,6 +81,27 @@ function gsy_profanity_filter($content) {
 
     $content = str_ireplace($profanities, '[censored]', $content);
     return $content;
+}
+
+/* ==================================================================================================
+  ENABLE MORE BUTTONS
+  ================================================================================================== */
+
+add_filter('mce_buttons_3', 'gsy_enable_more_buttons');
+
+function gsy_enable_more_buttons($buttons) {
+    $buttons[] = 'fontselect';
+    $buttons[] = 'fontsizeselect';
+    $buttons[] = 'styleselect';
+    $buttons[] = 'backcolor';
+    $buttons[] = 'newdocument';
+    $buttons[] = 'cut';
+    $buttons[] = 'copy';
+    $buttons[] = 'charmap';
+    $buttons[] = 'hr';
+    $buttons[] = 'visualaid';
+
+    return $buttons;
 }
 
 /* ==================================================================================================
