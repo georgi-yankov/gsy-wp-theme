@@ -17,12 +17,13 @@
 
             <?php
             $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+            $cat = get_query_var( 'cat' ) ? get_query_var( 'cat' ) : 0;
             $args = array(
                 'post_type' => 'post',
                 'orderby' => 'date',
                 'order' => 'DESC',
                 'paged' => $paged,
-                'cat' => -0,
+                'cat' => $cat,
             );
 
             // The Query
