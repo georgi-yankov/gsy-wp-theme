@@ -34,7 +34,7 @@ function build_options_page() {
 add_action('admin_init', 'register_and_build_fields');
 
 function register_and_build_fields() {
-    register_setting('plugin_options', 'plugin_options', 'validate_setting');
+    register_setting('plugin_options', 'plugin_options', 'gsy_sanitize_options');
 
     // Adding Sections
     add_settings_section('main_section', __('Main Settings', 'gsy-wp-theme'), 'section_cb', 'theme-options');
@@ -44,8 +44,10 @@ function register_and_build_fields() {
     add_settings_field('intro_text_2', __('Intro Text 2:', 'gsy-wp-theme'), 'intro_text_2_setting', 'theme-options', 'main_section');
 }
 
-function validate_setting($plugin_options) {
-    return $plugin_options;
+function gsy_sanitize_options($input) {
+    $input['intro_text'] = esc_textarea($input['intro_text']);
+    $input['intro_text_2'] = esc_textarea($input['intro_text_2']);
+    return $input;
 }
 
 function section_cb() {
@@ -60,14 +62,14 @@ function section_cb() {
 function intro_text_setting() {
     $options = get_option('plugin_options');
 
-    echo "<textarea name='plugin_options[intro_text]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . esc_textarea($options['intro_text']) . "</textarea>";
+    echo "<textarea name='plugin_options[intro_text]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . $options['intro_text'] . "</textarea>";
 }
 
 // Intro Text 2
 function intro_text_2_setting() {
     $options = get_option('plugin_options');
 
-    echo "<textarea name='plugin_options[intro_text_2]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . esc_textarea($options['intro_text_2']) . "</textarea>";
+    echo "<textarea name='plugin_options[intro_text_2]' placeholder='" . __('Place your intro text here...', 'gsy-wp-theme') . "'>" . $options['intro_text_2'] . "</textarea>";
 }
 
 /* * ***********************************************
