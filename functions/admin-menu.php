@@ -95,7 +95,7 @@ if ($script_filename == 'options-general.php' && $page_name == 'theme-options') 
 
     function gsy_adding_admin_scripts() {
         $script_src = get_template_directory_uri() . '/functions/func-js/options-page.js';
-        wp_enqueue_script('gsy-admin-style', $script_src);
+        wp_enqueue_script('gsy-admin-script', $script_src);
     }
 
 }
