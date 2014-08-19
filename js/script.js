@@ -28,7 +28,7 @@
                 id: $('#scroll-to-top-btn'),
                 height: 49,
                 width: 50,
-                distance: 40
+                distance: 12
             },
             siteWidth: 940,
             minWidth: function() {
