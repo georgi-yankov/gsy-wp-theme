@@ -85,17 +85,17 @@ if (isset($_GET['page'])) {
 // Add css and js only if we are in the theme options page
 if ($script_filename == 'options-general.php' && $page_name == 'theme-options') {
 
-    add_action('admin_head', 'admin_register_head');
-    add_action('admin_footer', 'admin_register_footer');
+    add_action('admin_enqueue_scripts', 'gsy_adding_admin_styles');
+    add_action('admin_enqueue_scripts', 'gsy_adding_admin_scripts');
 
-    function admin_register_head() {
-        $url = get_bloginfo('template_directory') . '/functions/func-css/options-page.css';
-        echo "<link rel='stylesheet' href='$url' />\n";
+    function gsy_adding_admin_styles() {
+        $style_src = get_template_directory_uri() . '/functions/func-css/options-page.css';
+        wp_enqueue_style('gsy-admin-style', $style_src);
     }
 
-    function admin_register_footer() {
-        $urlScript = get_bloginfo('template_directory') . '/functions/func-js/options-page.js';
-        echo "<script src='$urlScript'></script>\n";
+    function gsy_adding_admin_scripts() {
+        $script_src = get_template_directory_uri() . '/functions/func-js/options-page.js';
+        wp_enqueue_script('gsy-admin-style', $script_src);
     }
 
 }
