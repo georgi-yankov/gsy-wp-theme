@@ -1,0 +1,36 @@
+em {
+    font-style: italic;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
+/* ICONS */
+
+.footer-icon {
+    background-image: url("img/icons.png");
+    background-repeat: no-repeat;
+}
+
+.icon-date {
+    background-position: 0 0;
+}
+
+.icon-comment {
+    background-position: 0 -10px;  
+}
+
+.icon-author {
+    background-position: 0 -20px;  
+}
+
+.icon-category {
+    background-position: 0 -30px;  
+}

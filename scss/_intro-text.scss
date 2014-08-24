@@ -1,0 +1,12 @@
+#intro-text {
+    font-family: CartoGothicStd-Italic, $basic-font-family;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    max-width: 940px;
+    margin: 10px auto 0;
+    @include text-shadow(1px, 1px, 1px, #000);
+    p {
+        padding: 15px 140px;
+    }
+}

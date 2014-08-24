@@ -1,0 +1,158 @@
+/* BREADCRUMBS */
+#breadcrumbs-wrapper {
+    background-color: #171717;
+    border-top: 1px solid #2c2c2c;
+    border-bottom: 1px solid #2c2c2c;    
+    line-height: 18px;
+    min-height: 18px;
+
+    background-image: -webkit-linear-gradient(top, #161616 0%, #272727 45%, #272727 55%, #161616 100%);
+    background-image: -moz-linear-gradient(top, #161616 0%, #272727 45%, #272727 55%, #161616 100%);
+    background-image: -ms-linear-gradient(top, #161616 0%, #272727 45%, #272727 55%, #161616 100%);
+    background-image: -o-linear-gradient(top, #161616 0%, #272727 45%, #272727 55%, #161616 100%);
+    background-image: linear-gradient(to bottom, #161616 0%, #272727 45%, #272727 55%, #161616 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#272727', endColorstr='#161616');
+}
+
+#breadcrumbs {
+    color: #757575;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    text-transform: lowercase;
+    @include text-shadow(1px, 1px, 1px, #000);
+
+    max-width: 940px;
+    margin: 0 auto;
+
+    a {
+        color: #757575;
+        &:hover {
+            text-decoration: underline;
+
+        }
+    }
+}
+
+#header > .row-fluid {
+    padding-top: 50px;
+
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+/* LOGO */
+#logo {
+    h1 {
+        padding-bottom: 5px;
+        a {
+            font-family: CartoGothicStd-Book, $basic-font-family;
+            font-size: 55px;
+            @include overflow-safe;
+        }        
+    }
+
+    h2 {
+        font-family: CartoGothicStd-Book, $basic-font-family;
+        font-size: 16px;
+        padding-left: 4px;
+        @include overflow-safe;
+    }    
+}
+
+/* MAIN NAVIGATION */
+#main-nav {
+    padding-top: 28px;     
+    ul li {
+        a {
+            color: $primary-light-color;
+            display: block;
+            font-family: CartoGothicStd-Book, $basic-font-family;
+        }
+
+    }
+
+    >ul {
+        float: right;
+        font-size: 0;
+        >li {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 18px;
+            text-transform: uppercase;
+            margin-right: 11px;            
+            >a {                
+                padding: 4px 5px;
+                @include transition(all .1s ease);
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                background-color: $primary-light-color;
+                a {
+                    color: $primary-dark-color;
+                    @include text-shadow(1px, 1px, 1px, #fff);
+                }
+                ul,
+                span.dropdown-arrow {
+                    display: block;
+
+                }
+            }
+        }
+    }    
+    li.menu-item-has-children {
+        padding-right: 5px;
+        position: relative;
+        >a {
+            background: url("img/arrow.png") right center no-repeat;
+            padding-right: 16px;       
+        }
+        ul {
+            background-color: #1d1d1d;
+            display: none;
+            padding: 5px 10px;
+            position: absolute;
+            text-transform: none;                        
+            width: 140px;
+            z-index: 200;
+
+            -webkit-transition: height 1s ease-in;
+            -moz-transition: height 1s ease-in;
+            -o-transition: height 1s ease-in;
+            -ms-transition: height 1s ease-in;
+            transition: height 1s ease-in;
+
+            a {
+                color: $primary-light-color;
+                font-family: $basic-font-family;
+                font-size: 12px;
+                padding: 5px 10px;
+                @include text-shadow(1px, 1px, 1px, #000);
+                @include word-wrap;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            li {
+                border-bottom: 1px solid #0c0c0c;
+                border-top: 1px solid #363636;                
+                &:first-child {
+                    border-top: none;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+        span.dropdown-arrow {
+            /*background-image: url("img/dropdown-arrow.png");*/
+            display: none;
+            position: absolute;
+            left: 8px;
+            top: 20px;
+            width: 12px;
+            height: 6px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.search {
+    #main-content {
+        h1 {
+            background-color: $primary-light-color;
+            color: $primary-dark-color;
+            font-family: CartoGothicStd-Book, $basic-font-family;
+            font-size: 26px;
+            margin-bottom: 24px;
+            padding: 15px 20px 15px;
+        }
+    }
+}
+
+#no-search-result {
+    background-color: $primary-light-color;
+    padding: 20px 20px 15px;
+    @include box-shadow(0 0 8px #bdbec5 inset);
+    color: #535353;
+    font-size: 13px;
+    line-height: 22px;
+}

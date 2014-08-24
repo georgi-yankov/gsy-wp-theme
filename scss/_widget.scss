@@ -1,0 +1,23 @@
+.widget {
+    background-color: $primary-dark-color;
+    margin-bottom: 24px;
+    @include box-shadow(0 1px 1px #000);
+    @include text-shadow(1px, 1px, 1px, #000);
+    h3.widget-header {
+        background: url("img/widget-header-line.png") center bottom no-repeat;
+        color: $primary-light-color;
+        font-family: CartoGothicStd-Book, $basic-font-family;
+        font-size: 20px;
+        padding: 10px 18px;        
+        @include overflow-safe;
+    }
+    ul {
+        color: #fff;
+        line-height: 20px;
+        padding: 14px 18px 18px 18px;
+
+        &:after {
+            @include clearfix;
+        }
+    }
+}

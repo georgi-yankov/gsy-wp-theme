@@ -1,0 +1,13 @@
+#footer {
+    background-color: $primary-dark-color;
+    color: $secondary-dark-color;
+    padding: 10px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    @include box-shadow(0 1px 1px #000);
+    @include text-shadow(1px, 1px, 1px, #000);
+}
+
+#copyright {
+    line-height: 18px; 
+}

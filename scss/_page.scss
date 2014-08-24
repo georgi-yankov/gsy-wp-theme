@@ -1,0 +1,12 @@
+.page {
+    #main-content {
+        .post-entry {
+            .post-title {
+                color: $primary-dark-color;
+                font-family: CartoGothicStd-Book, $basic-font-family;
+                font-size: 26px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}

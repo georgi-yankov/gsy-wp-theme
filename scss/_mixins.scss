@@ -1,0 +1,54 @@
+@mixin linear-gradient($from-color, $from-where, $to-color, $to-where, $repeat: none) {
+    background-image: -webkit-linear-gradient(top, $from-color $from-where, $to-color $to-where);
+    background-image: -moz-linear-gradient(top, $from-color $from-where, $to-color $to-where);
+    background-image: -ms-linear-gradient(top, $from-color $from-where, $to-color $to-where);
+    background-image: -o-linear-gradient(top, $from-color $from-where, $to-color $to-where);
+    background-image: linear-gradient(to bottom, $from-color $from-where, $to-color $to-where);
+    background-repeat: $repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=$from-color, endColorstr=$to-color);
+}
+
+@mixin text-shadow($x, $v, $blur, $color) {
+    -webkit-text-shadow: $x $v $blur $color;
+    text-shadow: $x $v $blur $color;
+}
+
+@mixin box-shadow($string) {
+    -webkit-box-shadow: $string;
+    box-shadow: $string;
+}
+
+@mixin overflow-safe {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin word-wrap {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+@mixin clearfix {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+}
+
+@mixin transition ($transition) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}

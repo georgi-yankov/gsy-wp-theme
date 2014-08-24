@@ -1,0 +1,84 @@
+.carousel-container {
+    margin: 0 auto;
+    position: relative;
+    width: 940px;
+}
+
+#carousel {
+    height: 280px;
+    width: 940px;
+    position: relative;
+}
+
+.carousel-feature {
+    @include box-shadow(0 2px 2px #000);
+    .carousel-image {
+        border: 1px solid #2b2b2b;
+    }
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    border: 9px solid $primary-dark-color;
+    cursor: pointer;
+}
+
+.tracker-summation-container {
+    display: none;  // CHANGE THIS TO BE VISIBLE
+    position: absolute;
+    color: white;
+    right: 48px;
+    top: 230px;
+    padding: 3px;
+    margin: 3px;
+    background-color: #000;
+}
+
+.tracker-individual-container {
+    position:absolute;
+    color:white;
+    right:48px;
+    top:210px;
+    padding:0;
+    margin:0;
+}
+
+.tracker-individual-container li {
+    list-style:none;
+}
+
+.tracker-individual-container .tracker-individual-blip {
+    display: none;  // CHANGE THIS TO BE VISIBLE
+    margin:0 3px;
+    padding:0 3px;
+    color:white;
+    text-align:center;
+    background-color:#DDD;
+}
+
+.tracker-individual-container .tracker-individual-blip-selected {
+    color:white;
+    font-weight:bold;
+    background-color:#000;
+}
+
+#carousel-left {
+    background: url("img/main-sprite.png") 0 0 no-repeat;
+    position: absolute;
+    top: 118px;
+    left: 0;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    z-index: 100;
+}
+
+#carousel-right {
+    background: url("img/main-sprite.png") -44px 0 no-repeat;
+    position: absolute;
+    top: 118px;
+    right: 0;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    z-index: 100;
+}

@@ -1,0 +1,16 @@
+html {   
+    min-height: 100%;
+}
+
+body {
+    background-repeat: repeat, no-repeat;
+    background-position: center top;
+    color: $primary-dark-color;
+    font-family: $basic-font-family;
+    font-size: 12px;
+    min-height: 100%;
+}
+
+#site-wrapper {
+    padding-bottom: 20px;
+}
