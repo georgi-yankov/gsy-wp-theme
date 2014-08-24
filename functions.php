@@ -17,7 +17,7 @@ if (function_exists('register_nav_menus')) {
   ================================================================================================== */
 
 register_sidebar(array(
-    'name' => sprintf(__('Right Hand Sidebar', 'gsy-wp-theme'), 1),
+    'name' => __('Right Hand Sidebar', 'gsy-wp-theme'),
     'id' => 'right-sidebar',
     'description' => __('Widgets in this area will be shown on the right-hand side.', 'gsy-wp-theme'),
     'before_widget' => '<article id="%1$s" class="widget %2$s">',
