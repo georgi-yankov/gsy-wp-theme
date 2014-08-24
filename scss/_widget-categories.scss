@@ -4,7 +4,7 @@
             @include clearfix;  
         }            
         li {
-            background: url("img/widget-short-line.png") center bottom no-repeat;
+            background: url("../img/widget-short-line.png") center bottom no-repeat;
             display: inline-block;
             float: left;
             margin: 0 17px 0 0;
@@ -21,7 +21,7 @@
                 margin-right: 0;
             }
             a {
-                background: url("img/arrow.png") left 4px no-repeat;
+                background: url("../img/arrow.png") left 4px no-repeat;
                 color: #fff;
                 padding-left: 20px;
                 &:hover {

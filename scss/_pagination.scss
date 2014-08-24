@@ -23,17 +23,17 @@
         }
 
         .pagination-current {
-            background: url(img/pagination.png) no-repeat 0px -34px;
+            background: url(../img/pagination.png) no-repeat 0px -34px;
             color: $primary-dark-color;
             @include text-shadow(1px, 1px, 0, #fff);
         }
 
         a {
-            background: url(img/pagination.png) no-repeat 0px 0px;
+            background: url(../img/pagination.png) no-repeat 0px 0px;
             color: #fff;
 
             &:hover {
-                background: url(img/pagination.png) no-repeat 0px -34px;
+                background: url(../img/pagination.png) no-repeat 0px -34px;
                 color: $primary-dark-color;
                 @include text-shadow(1px, 1px, 0, #fff);
             }
@@ -60,7 +60,7 @@
     }
 
     .pagination-next {
-        background: url(img/pagination.png) no-repeat right 0px;
+        background: url(../img/pagination.png) no-repeat right 0px;
         padding: 0 20px 0 10px;
 
         &:hover {
@@ -69,7 +69,7 @@
     }
 
     .pagination-previous {
-        background: url(img/pagination.png) no-repeat left -68px;
+        background: url(../img/pagination.png) no-repeat left -68px;
         padding: 0 10px 0 20px;
 
         &:hover {

@@ -105,7 +105,7 @@
         padding-right: 5px;
         position: relative;
         >a {
-            background: url("img/arrow.png") right center no-repeat;
+            background: url("../img/arrow.png") right center no-repeat;
             padding-right: 16px;       
         }
         ul {
@@ -146,7 +146,7 @@
             }
         }
         span.dropdown-arrow {
-            /*background-image: url("img/dropdown-arrow.png");*/
+            /*background-image: url("../img/dropdown-arrow.png");*/
             display: none;
             position: absolute;
             left: 8px;

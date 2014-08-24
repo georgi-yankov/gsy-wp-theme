@@ -23,7 +23,7 @@
                 height: 40px;
             }
             >span:first-child {
-                background: url("img/pen-icon.png") center center no-repeat;
+                background: url("../img/pen-icon.png") center center no-repeat;
                 border-bottom: 1px solid #111;
             }
             >span:last-child {
@@ -216,7 +216,7 @@
             }
 
             blockquote {
-                background: #d6dbdf url(img/blockquote.png) no-repeat 0 bottom;
+                background: #d6dbdf url(../img/blockquote.png) no-repeat 0 bottom;
                 font-style: italic;
                 margin: 5px 0 5px 0;
                 padding: 15px 20px 20px 20px;
@@ -535,7 +535,7 @@
             }
 
             input[type="submit"] {
-                background: url("img/main-sprite.png") no-repeat -88px 0;
+                background: url("../img/main-sprite.png") no-repeat -88px 0;
                 border: none;
                 font-size: 0px;
                 width: 113px;
