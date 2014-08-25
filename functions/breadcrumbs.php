@@ -14,7 +14,7 @@ function gsy_breadcrumbs() {
     $after = '</span>'; // tag after the current crumb
 
     global $post;
-    $homeLink = get_bloginfo('url');
+    $homeLink = home_url('/');
 
     if (is_home() || is_front_page()) {
 
