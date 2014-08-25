@@ -43,7 +43,7 @@
                                         <?php foreach ($link_web as $key => $value) { ?>
 
                                             <li class="visit-online-btn">
-                                                <a href="<?php echo $value; ?>" target="_blank"><?php _e('visit online'); ?></a>
+                                                <a href="<?php echo $value; ?>" target="_blank"><?php _e('visit online', 'gsy-wp-theme'); ?></a>
                                             </li><!-- .visit-online -->
 
                                         <?php } ?>
@@ -56,7 +56,7 @@
                                         <?php foreach ($link_web as $key => $value) { ?>
 
                                             <li class="view-source-btn">
-                                                <a href="<?php echo $value; ?>" target="_blank"><?php _e('view source'); ?></a>
+                                                <a href="<?php echo $value; ?>" target="_blank"><?php _e('view source', 'gsy-wp-theme'); ?></a>
                                             </li><!-- .view-source-btn -->
 
                                         <?php } ?>

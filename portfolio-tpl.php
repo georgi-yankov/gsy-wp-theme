@@ -65,7 +65,7 @@
 
                                 <div class="portfolio-item-content"><?php echo gsy_excerpt_dots(20); ?></div>
                                 <div class="portfolio-item-footer">
-                                    <a href="<?php the_permalink(); ?>"><?php _e('details'); ?></a>
+                                    <a href="<?php the_permalink(); ?>"><?php _e('details', 'gsy-wp-theme'); ?></a>
                                 </div>
                             </li><!-- .portfolio-item -->
 
