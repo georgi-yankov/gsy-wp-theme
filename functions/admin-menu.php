@@ -6,7 +6,7 @@
 add_action('admin_menu', 'create_theme_options_page');
 
 function create_theme_options_page() {
-    add_options_page('Theme Options', 'Theme Options', 'administrator', 'theme-options', 'build_options_page');
+    add_theme_page('Theme Options', 'Theme Options', 'administrator', 'theme-options', 'build_options_page');
 }
 
 function build_options_page() {
@@ -85,7 +85,7 @@ if (isset($_GET['page'])) {
 }
 
 // Add css and js only if we are in the theme options page
-if ($script_filename == 'options-general.php' && $page_name == 'theme-options') {
+if ($script_filename == 'themes.php' && $page_name == 'theme-options') {
 
     add_action('admin_enqueue_scripts', 'gsy_adding_admin_styles');
     add_action('admin_enqueue_scripts', 'gsy_adding_admin_scripts');
