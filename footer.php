@@ -2,7 +2,7 @@
     <div class="row-fluid">
 
         <div id="copyright">
-            <p>Copyright © <?php echo date('Y'); ?> <?php echo bloginfo('name'); ?>. <?php __('All rights reserved.', 'gsy-wp-theme'); ?></p>
+            <p>Copyright &copy; <?php echo date('Y'); ?> <?php echo bloginfo('name'); ?>. <?php __('All rights reserved.', 'gsy-wp-theme'); ?></p>
         </div><!-- #copyright -->
 
     </div><!-- .row-fluid -->
