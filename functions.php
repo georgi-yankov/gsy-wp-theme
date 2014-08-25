@@ -59,6 +59,23 @@ add_theme_support('custom-header', array(
 ));
 
 /* ==================================================================================================
+  ENABLING SUPPORT FOR CUSTOM BACKGROUND
+  ================================================================================================== */
+
+global $wp_version;
+
+if (version_compare($wp_version, '3.4', '>=')) :
+    add_theme_support('custom-background', array(
+        'default-color' => '171717',
+    ));
+else :
+    // Backwards Compatibility
+    add_custom_background(array(
+        'default-color' => '171717',
+    ));
+endif;
+
+/* ==================================================================================================
   REMOVE DIMENSIONS OF IMAGES SEND TO EDITOR
   ================================================================================================== */
 
