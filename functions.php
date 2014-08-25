@@ -51,6 +51,8 @@ add_theme_support('automatic-feed-links');
   ================================================================================================== */
 
 add_theme_support('custom-header', array(
+    'header-text' => true,
+    'default-text-color' => 'f8f9fa',
     'uploads' => true,
     'flex-width' => true,
     'width' => 940,

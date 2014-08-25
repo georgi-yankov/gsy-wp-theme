@@ -66,7 +66,9 @@
 
                 <div class="row-fluid">
                     <div id="logo" class="span5">
-                        <h1><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                        <h1>
+                            <a style="color: #<?php header_textcolor(); ?>" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+                        </h1>
                         <h2><?php bloginfo('description'); ?></h2>
                     </div>
 
