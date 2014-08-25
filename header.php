@@ -23,8 +23,12 @@
         <meta name="author" content="Georgi Yankov" />
         <meta name="robots" content="index, follow" />
 
+        <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png" />
+        <!--[if IE]>
+                <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
+        <![endif]-->
+
         <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-        <link rel="icon" type="image/ico" href="<?php echo get_template_directory_uri(); ?>/favicon.jpg" />
 
         <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -75,7 +79,7 @@
                                     </a>
                                 </li>
                             </ul>
-<?php } ?>
+                        <?php } ?>
                     </nav>
                 </div><!-- .row-fluid -->
 
