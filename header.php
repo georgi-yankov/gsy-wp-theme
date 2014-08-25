@@ -56,6 +56,14 @@
 
                 </div><!-- #breadcrumbs-wrapper -->
 
+                <?php if (get_header_image()) : ?>
+                    <div id="site-header">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                            <img src="<?php header_image(); ?>" width="100%" height="auto" alt="">
+                        </a>
+                    </div>
+                <?php endif; ?>
+
                 <div class="row-fluid">
                     <div id="logo" class="span5">
                         <h1><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>

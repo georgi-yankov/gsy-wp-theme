@@ -145,6 +145,10 @@ textarea {
     #breadcrumbs a:hover {
       text-decoration: underline; }
 
+#site-header {
+  max-width: 940px;
+  margin: 0 auto; }
+
 #header > .row-fluid {
   padding-top: 50px;
   max-width: 940px;
