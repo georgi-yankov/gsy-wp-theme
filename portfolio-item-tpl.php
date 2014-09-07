@@ -35,31 +35,25 @@
                         <div class="post-body">
                             <?php the_content(); ?>
 
-                            <?php if (get_post_custom_values('visit online') || get_post_custom_values('view source')) : ?>
+                            <?php if (get_post_meta(get_the_ID(), 'visit online', true) || get_post_meta(get_the_ID(), 'view source', true)) : ?>
                                 <ul class="portfolio-buttons-holder">
-                                    <?php if (get_post_custom_values('visit online')) : ?>
+                                    <?php if (get_post_meta(get_the_ID(), 'visit online', true)) : ?>
 
-                                        <?php $link_web = get_post_custom_values('visit online'); ?>
-                                        <?php foreach ($link_web as $key => $value) { ?>
+                                        <?php $link_web = get_post_meta(get_the_ID(), 'visit online', true); ?>
 
-                                            <li class="visit-online-btn">
-                                                <a href="<?php echo $value; ?>" target="_blank"><?php _e('visit online', 'gsy-wp-theme'); ?></a>
-                                            </li><!-- .visit-online -->
-
-                                        <?php } ?>
+                                        <li class="visit-online-btn">
+                                            <a href="<?php echo $link_web; ?>" target="_blank"><?php _e('visit online', 'gsy-wp-theme'); ?></a>
+                                        </li><!-- .visit-online -->
 
                                     <?php endif; ?> 
 
-                                    <?php if (get_post_custom_values('view source')) : ?>
+                                    <?php if (get_post_meta(get_the_ID(), 'view source', true)) : ?>
 
-                                        <?php $link_web = get_post_custom_values('view source'); ?>
-                                        <?php foreach ($link_web as $key => $value) { ?>
+                                        <?php $link_web = get_post_meta(get_the_ID(), 'view source', true); ?>
 
-                                            <li class="view-source-btn">
-                                                <a href="<?php echo $value; ?>" target="_blank"><?php _e('view source', 'gsy-wp-theme'); ?></a>
-                                            </li><!-- .view-source-btn -->
-
-                                        <?php } ?>
+                                        <li class="view-source-btn">
+                                            <a href="<?php echo $link_web; ?>" target="_blank"><?php _e('view source', 'gsy-wp-theme'); ?></a>
+                                        </li><!-- .view-source-btn -->
 
                                     <?php endif; ?> 
                                 </ul><!--  .portfolio-buttons-holder -->
