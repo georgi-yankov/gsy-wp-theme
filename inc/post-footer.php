@@ -5,7 +5,7 @@
 
     <?php
     $comments_count = wp_count_comments($post->ID);
-    $total_comments = $comments_count->total_comments;
+    $total_comments = $comments_count->approved;
     ?>
     <span class="footer-icon icon-comment">
         <a href="<?php comments_link(); ?>">
