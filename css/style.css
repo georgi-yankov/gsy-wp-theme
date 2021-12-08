@@ -860,11 +860,18 @@ textarea {
 ==============================================================================*/
 .widget {
   background-color: #1c1c1c;
+  color: #f0f1f2;
   margin-bottom: 24px;
   -webkit-box-shadow: 0 1px 1px black;
   box-shadow: 0 1px 1px black;
   -webkit-text-shadow: 1px 1px 1px black;
-  text-shadow: 1px 1px 1px black; }
+  text-shadow: 1px 1px 1px black;
+}
+
+.widget h2 {
+  padding: 7px;
+}
+
   .widget h3.widget-header {
     background: url("../img/widget-header-line.png") center bottom no-repeat;
     color: #f0f1f2;
@@ -879,12 +886,24 @@ textarea {
   .widget ul {
     color: #fff;
     line-height: 20px;
-    padding: 14px 18px 18px 18px; }
+     padding: 7px 7px 7px 18px !important; }
     .widget ul:after {
       clear: both;
       content: "";
       display: block;
       height: 0; }
+
+  .widget ol {
+     padding: 7px 7px 7px 18px !important;
+  }
+
+  .widget a:link, .widget a:visited, .widget a:hover  {
+    color: #f0f1f2;
+  }
+
+  .widget a:link {
+    text-decoration: underline;
+  }
 
 /*********************************************
     WIDGET CATEGORIES
@@ -954,6 +973,15 @@ textarea {
     height: 19px; }
     .widget.widget_search .searchform a:hover {
       background-position: -201px -20px; }
+
+    .widget.widget_search {
+      padding: 7px;
+    }
+
+    .widget.widget_search label {
+      display: block;
+      padding-bottom: 7px;
+    }
 
 /*********************************************
     WIDGET RECENT POSTS
