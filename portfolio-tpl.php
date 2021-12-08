@@ -23,8 +23,9 @@
                 $args = array(
                     'post_type' => 'page',
                     'post_parent' => $post->ID,
-                    'orderby' => 'date',
-                    'order' => 'DESC',
+                    //'orderby' => 'date',
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
                     'paged' => $paged,
                     'posts_per_page' => 4,
                 );
